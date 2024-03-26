@@ -1,3 +1,6 @@
+/**
+ * Colors to use in a RGB LED.
+ */
 enum ColorLedRGB {
     //% block=red
     Red = 0,
@@ -24,6 +27,7 @@ namespace probots{
     //% block="LED RGB on CONN 7 show color %color=ColorLedRGB"
     //% subcategory="LED RGB"
     //% weight=100 color=#335566 icon="\uf0eb"
+    //% help=github:extension-20/docs/led-rgb
     export function rgbOn(color: ColorLedRGB) {
         switch (color) {
             case ColorLedRGB.Black:
