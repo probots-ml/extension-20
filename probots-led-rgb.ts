@@ -60,7 +60,7 @@ namespace probots{
                 //100% red 64.7% green 0% blue
                 pins.digitalWritePin(DigitalPin.P15, 1); //red
                 pins.digitalWritePin(DigitalPin.P14, 0); //blue
-                pins.analogWritePin(probots.getAnalogPin(DigitalPin.P13), 128);
+                pins.analogWritePin(probots.getAnalogPin(DigitalPin.P13), 32);
                 break;
             case ColorLedRGB.Violet:
                 pins.digitalWritePin(DigitalPin.P15, 1);
