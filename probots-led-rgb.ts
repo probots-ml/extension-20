@@ -19,11 +19,10 @@ enum ColorLedRGB {
     Black
 }
 
-namespace ledRGB{
+namespace probots{
     
-
     //% block="LED RGB on CONN 7 show color %color=ColorLedRGB"
-    //% subcategory="LED RGB" weight=92
+    //% subcategory="LED RGB" weight=100
     //% weight=100 color=#335566 icon="\uf0eb"
     export function rgbOn(color: ColorLedRGB) {
         switch (color) {
@@ -80,8 +79,9 @@ namespace ledRGB{
 
 
     //% block="RGB LED on CONN 7 show color %color=colores_rgb by %duration|ms"
+    //% subcategory="LED RGB"
     //% weight=90 color=#335566 icon="\uf0eb"
-    export function rgb_led_time(color: ColorLedRGB, duration: number) {
+    export function rgbOnByTime(color: ColorLedRGB, duration: number) {
         rgbOn(color);
         basic.pause(duration);
         rgbOn(ColorLedRGB.Black);
