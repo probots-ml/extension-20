@@ -22,7 +22,7 @@ enum ColorLedRGB {
 namespace probots{
     
     //% block="LED RGB on CONN 7 show color %color=ColorLedRGB"
-    //% subcategory="LED RGB" weight=100
+    //% subcategory="LED RGB"
     //% weight=100 color=#335566 icon="\uf0eb"
     export function rgbOn(color: ColorLedRGB) {
         switch (color) {
