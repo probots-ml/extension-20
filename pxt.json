@@ -10,7 +10,8 @@
         "main.ts",
         "README.md",
         "probots-microbit-brick-v1.ts",
-        "probots.ts"
+        "probots.ts",
+        "probots-led-rgb.ts"
     ],
     "testFiles": [
         "test.ts"

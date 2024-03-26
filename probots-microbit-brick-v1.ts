@@ -14,8 +14,9 @@ enum ConnectionPorts {
 
 namespace probots{
 
-//puertos de conexion para la interfaz de mis ladrillos
-//si se necesitan analogicos usar getAnalogPin(DP)
+/**
+ * Description of any pinout connection over each port.
+ */
 let pinOut: any = {
     1: { P0: DigitalPin.P8,     P1: DigitalPin.P0 },
     2: { P0: DigitalPin.P12,    P1: DigitalPin.P1 },
@@ -35,7 +36,7 @@ export function brickPort(portToUse: ConnectionPorts): any {
     return pinOut[portToUse];
 }
 
-function getAnalogPin(pin: DigitalPin): any {
+export function getAnalogPin(pin: DigitalPin): any {
     switch (pin) {
         case DigitalPin.P0:
             return AnalogPin.P0;
