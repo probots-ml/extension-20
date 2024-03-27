@@ -2,6 +2,7 @@ namespace probots {
 
     /**
      * Detects a objects if there is near a 1 centimeter or less.
+     * Attention! Black objects can´t be detected!
      * @param myPort port of connection
     */
     //% block="sensor IR detects objects on %myPort=brickPort"
