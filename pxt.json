@@ -18,7 +18,8 @@
         "probots-led-laser.ts",
         "probots-limit-switch.ts",
         "probots-potentiometer.ts",
-        "probots-hall-sensor.ts"
+        "probots-hall-sensor.ts",
+        "probots-infrared-sensor.ts"
     ],
     "testFiles": [
         "test.ts"
