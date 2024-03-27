@@ -1,6 +1,5 @@
 
 
-
 namespace probots {
 
     //% block="turn on LED on %myPort=brickPort"
@@ -14,13 +13,12 @@ namespace probots {
         return
     }
 
-
     //% block="turn on LED on %myPort=brickPort with intensity %intensity"
     //% block.loc.es="encender LED en puerto %myPort=brickPort con itensidad %intensity"
     //% weight=98
     //% subcategory="LED"
     //% color=#335566
-    //% intensity.default=50
+    //% intensity.defl=50
     //% intensity.min=0 intensity.max=100
     export function ledOnWithPower(myPort: any, intensity: number): void {
         let intensityMapped = pins.map(intensity, 0, 100, 0, 1024);
