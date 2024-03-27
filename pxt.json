@@ -20,7 +20,8 @@
         "probots-potentiometer.ts",
         "probots-hall-sensor.ts",
         "probots-infrared-sensor.ts",
-        "probots-ldr-sensor.ts"
+        "probots-ldr-sensor.ts",
+        "probots-ultrasound-sensor.ts"
     ],
     "testFiles": [
         "test.ts"
