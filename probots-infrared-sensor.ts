@@ -11,7 +11,7 @@ namespace probots {
     //% color=#A1A5A6
     export function infraredIsOn(myPort: any): boolean {
 
-        return pins.digitalReadPin(myPort.P0) === 1? true : false;
+        return pins.digitalReadPin(myPort.P0) == 1? true : false;
         
     }
 }
