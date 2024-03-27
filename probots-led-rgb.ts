@@ -8,9 +8,9 @@ enum ColorLedRGB {
     Green,
     //% block=blue
     Blue,
-    //% block=orange
-    Yellow,
     //% block=yellow
+    Yellow,
+    //% block=orange
     Orange,
     //% block=violet
     Violet,
@@ -25,6 +25,7 @@ enum ColorLedRGB {
 namespace probots{
     
     //% block="LED RGB on CONN 7 show color %color=ColorLedRGB"
+    //% block.loc.es="LED RGB en CONN 7 muestra el color %color=ColorLedRGB"
     //% subcategory="LED RGB"
     //% weight=100 color=#335566 icon="\uf0eb"
     //% help=github:extension-20/docs/led-rgb
@@ -56,9 +57,9 @@ namespace probots{
                 pins.digitalWritePin(DigitalPin.P13, 0);
                 break;
             case ColorLedRGB.Yellow:
-                pins.digitalWritePin(DigitalPin.P15, 1);
-                pins.digitalWritePin(DigitalPin.P14, 0);
-                pins.digitalWritePin(DigitalPin.P13, 1);
+                pins.analogWritePin(probots.getAnalogPin(DigitalPin.P15), 1023); // red
+                pins.digitalWritePin(DigitalPin.P14, 0); // blue
+                pins.analogWritePin(probots.getAnalogPin(DigitalPin.P13), 128); // green
                 break;
             case ColorLedRGB.Orange:
                 //100% red 64.7% green 0% blue

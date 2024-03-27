@@ -1,6 +1,16 @@
-// aquí va el archivo "tests"; esto no se compilará cuando este paquete se utilice como una extensión.
-probots.rgbOn(ColorLedRGB.Orange);
-basic.pause(1000);
+probots.rgbOn(ColorLedRGB.Yellow)
+basic.pause(3000);
 probots.rgbOff();
-probots.rgbOnByTime(ColorLedRGB.Orange, 2000);
-probots.rgbOnByTime(ColorLedRGB.Cyan,2000);
+basic.pause(500);
+
+basic.forever(function () {
+    probots.rgbOn(ColorLedRGB.Red)
+    basic.pause(1000)
+    probots.rgbOff()
+    basic.pause(1000)
+    probots.rgbOnByTime(ColorLedRGB.Green, 1000)
+    probots.rgbOff()
+    probots.rgbOnByTime(ColorLedRGB.Blue, 1000)
+    probots.rgbOff()
+    probots.rgbOnByTime(ColorLedRGB.Orange, 5000)
+})
