@@ -27,9 +27,9 @@ namespace probots{
     //% block="LED RGB on CONN 7 show color %color=ColorLedRGB"
     //% block.loc.es="LED RGB en CONN 7 muestra el color %color=ColorLedRGB"
     //% subcategory="LED RGB"
-    //% weight=100 color=#335566 icon="\uf0eb"
+    //% weight=90 color=#335566 icon="\uf0eb"
     //% help=github:extension-20/docs/led-rgb
-    export function rgbOn(color: ColorLedRGB) {
+    export function rgbOn(color: ColorLedRGB): void {
         switch (color) {
             case ColorLedRGB.Black:
                 pins.digitalWritePin(DigitalPin.P15, 0);
@@ -85,8 +85,8 @@ namespace probots{
 
     //% block="RGB LED on CONN 7 show color %color=colores_rgb by %duration|ms"
     //% subcategory="LED RGB"
-    //% weight=90 color=#335566 icon="\uf0eb"
-    export function rgbOnByTime(color: ColorLedRGB, duration: number) {
+    //% weight=80 color=#335566 icon="\uf0eb"
+    export function rgbOnByTime(color: ColorLedRGB, duration: number): void {
         rgbOn(color);
         basic.pause(duration);
         rgbOn(ColorLedRGB.Black);
