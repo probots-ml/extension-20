@@ -14,7 +14,8 @@
         "probots.ts",
         "probots-led-rgb.ts",
         "probots-led.ts",
-        "probots-push-button.ts"
+        "probots-push-button.ts",
+        "probots-led-laser.ts"
     ],
     "testFiles": [
         "test.ts"
