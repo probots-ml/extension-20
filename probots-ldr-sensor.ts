@@ -1,6 +1,6 @@
 namespace probots {
     /**
-     * Detects a amount of light using LDR sensor, from 0 to 100.
+     * Detects the amount of light using LDR sensor, in a range from 0 (no light) to 100 (maximum amount of light).
      * @param myPort port of connection
     */
     //% block="LDR value on %myPort=brickPort"
