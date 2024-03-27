@@ -1,5 +1,4 @@
 namespace probots {
-
     //% block="magnetique fiel detected on %myPort=brickPort"
     //% block.loc.es="campo magnético detectado en puerto %myPort=brickPort"  
     //% weight=100
@@ -15,6 +14,5 @@ namespace probots {
             return true;
         }
     }
-
 }
 
