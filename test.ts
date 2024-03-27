@@ -1,5 +1,5 @@
 basic.forever(function () {
-    if (probots.isLimitSwitchReached(probots.brickPort(ConnectionPorts.CON1))) {
+    if (probots.potentiometer(probots.brickPort(ConnectionPorts.CON1)) == 0) {
         probots.laserOn(probots.brickPort(ConnectionPorts.CON7))
         basic.pause(200)
         probots.laserOff(probots.brickPort(ConnectionPorts.CON7))

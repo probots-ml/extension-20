@@ -16,7 +16,8 @@
         "probots-led.ts",
         "probots-push-button.ts",
         "probots-led-laser.ts",
-        "probots-limit-switch.ts"
+        "probots-limit-switch.ts",
+        "probots-potentiometer.ts"
     ],
     "testFiles": [
         "test.ts"
