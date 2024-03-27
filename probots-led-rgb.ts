@@ -95,7 +95,7 @@ namespace probots{
 
     //% block="RGB LED on CONN 7 turn off"
     //% subcategory="LED RGB"
-    //% weight=80 color=#335566 icon="\uf0eb"
+    //% weight=75 color=#335566 icon="\uf0eb"
     export function rgbOff() {
         rgbOn(ColorLedRGB.Black);
         return
