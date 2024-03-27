@@ -1,0 +1,10 @@
+basic.forever(function () {
+    probots.ledOn(probots.brickPort(ConnectionPorts.CON2))
+    basic.pause(500)
+    probots.ledOff(probots.brickPort(ConnectionPorts.CON2))
+    basic.pause(500)
+    probots.ledOnWithPower(probots.brickPort(ConnectionPorts.CON2),50)
+    basic.pause(500)
+    probots.ledOff(probots.brickPort(ConnectionPorts.CON2))
+    basic.pause(500)
+})
