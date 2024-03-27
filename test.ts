@@ -1,3 +1,7 @@
 basic.forever(function () {
-    basic.showNumber(probots.potentiometer(probots.brickPort(ConnectionPorts.CON1)))
+    if (probots.ultrasoundDistance(probots.brickPort(ConnectionPorts.CON3)) > 70) {
+        probots.rgbOn(ColorLedRGB.Red)
+    } else {
+        probots.rgbOn(ColorLedRGB.Green)
+    }
 })
