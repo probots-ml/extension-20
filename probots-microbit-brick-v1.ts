@@ -28,7 +28,7 @@ enum I2CConnectionPorts {
  * Available 4 pins connections ports for the ebrick.
  */
 enum ConnectionPorts4Pins {
-    CON6 = 61,
+    CON6 = 6,
     CON7
 };
 
@@ -38,14 +38,14 @@ namespace probots{
  * Description of any pinout connection over each port.
  */
 let pinOut: any = {
-    1: { P0: DigitalPin.P8,     P1: DigitalPin.P0 },
-    2: { P0: DigitalPin.P12,    P1: DigitalPin.P1 },
-    3: { P0: DigitalPin.P16,    P1: DigitalPin.P2 },
-    4: { P0: DigitalPin.P6,     P1: DigitalPin.P3 },
-    5: { P0: DigitalPin.P7,     P1: DigitalPin.P4 },
-    6: { P0: DigitalPin.P9,     P1: DigitalPin.P10 },
-    7: { P0: DigitalPin.P13,    P1: DigitalPin.P14 },
-    8: { P0: DigitalPin.P15,    P1: DigitalPin.P11 }
+    1: { P0: DigitalPin.P8,     P1: DigitalPin.P0   },
+    2: { P0: DigitalPin.P12,    P1: DigitalPin.P1   },
+    3: { P0: DigitalPin.P16,    P1: DigitalPin.P2   },
+    4: { P0: DigitalPin.P6,     P1: DigitalPin.P3   },
+    5: { P0: DigitalPin.P7,     P1: DigitalPin.P4   },
+    6: { P0: DigitalPin.P9,     P1: DigitalPin.P10, P2: DigitalPin.P5,  P3: DigitalPin.P11},
+    7: { P0: DigitalPin.P13,    P1: DigitalPin.P14, P2: DigitalPin.P15, P3: DigitalPin.P16},
+    8: { P0: DigitalPin.P15,    P1: DigitalPin.P11  }
 }
 
 //% block="%port"
