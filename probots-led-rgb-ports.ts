@@ -5,7 +5,7 @@ namespace probots {
     //% block="LED RGB on %myPort=ConnectionPorts4Pins show color %color=ColorLedRGB"
     //% subcategory="LED RGB Ports"
     //% weight=90 color=#99AA05
-    export function rgbPortOn(myPort: ConnectionPorts4Pins, color: ColorLedRGB): void {
+    export function rgbPortOn(myPort: any, color: ColorLedRGB): void {
         switch (color) {
             case ColorLedRGB.Black:
                 pins.digitalWritePin(brickPort(myPort).P2, 0);
