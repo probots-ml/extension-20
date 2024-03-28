@@ -26,7 +26,7 @@ namespace probots {
 
     //% blockId=rgbPortOn
     //% block="LED RGB on %myPort=brickPort4Pins show color %color=ColorLedRGB"
-    //% subcategory="LED RGB Ports"
+    //% subcategory="LED RGB"
     //% weight=90 color=#99AA05
     export function rgbPortOn(myPort: any, color: ColorLedRGB): void {
         switch (color) {
@@ -83,7 +83,7 @@ namespace probots {
 
     //% blockId=rgbPortOnByTime
     //% block="RGB LED on %myPort=brickPort4Pins show color %color=colores_rgb by %duration|ms"
-    //% subcategory="LED RGB Ports"
+    //% subcategory="LED RGB"
     //% weight=80 
     //% weight=90 color=#99AA05
     export function rgbPortOnByTime(myPort: any, color: ColorLedRGB, duration: number): void {
@@ -95,7 +95,7 @@ namespace probots {
 
     //% blockId=rgbPortOff
     //% block="RGB LED on %myPort=brickPort4Pins turn off"
-    //% subcategory="LED RGB Ports"
+    //% subcategory="LED RGB"
     //% weight=75
     //% weight=90 color=#99AA05
     export function rgbPortOff(myPort: any) {
