@@ -12,6 +12,26 @@ enum ConnectionPorts {
     CON8        //p15   p11
 };
 
+/**
+ * Available I2C connections ports for the ebrick.
+ */
+enum I2CConnectionPorts {
+    CON1 = 1,   
+    CON2,       
+    CON3,       
+    CON4,       
+    CON5,       
+    CON8  = 8    
+};
+
+/**
+ * Available 4 pins connections ports for the ebrick.
+ */
+enum ConnectionPorts4Pins {
+    CON6 = 61,
+    CON7
+};
+
 namespace probots{
 
 /**
