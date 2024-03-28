@@ -6,7 +6,7 @@ namespace probots {
     //% blockId=ldrValue
     //% block="LDR value on %myPort=brickPortADC || show in console $showInSerialPort"
     //% showInSerialPort.defl=false
-    //% block.loc.es="valor de LDR en puerto %myPort=brickPort"  
+    //% block.loc.es="valor de LDR en puerto %myPort=brickPortADC"
     //% weight=100
     //% subcategory="LDR Sensor"
     //% color=#F93274
