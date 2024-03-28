@@ -1,7 +1,11 @@
-
+probots.ledOn(probots.brickPort(ConnectionPorts.CON3))
+basic.pause(1000)
+probots.ledOff(probots.brickPort(ConnectionPorts.CON3))
+basic.pause(1000)
 basic.forever(function () {
-
-    probots.microphoneDetectSound(soundIntensity.LOW, probots.brickPort(ConnectionPorts.CON4))
-
-   
+    if (probots.microphoneDetectSound(soundIntensity.HIGH, probots.brickPort(ConnectionPorts.CON4))) {
+        probots.ledOn(probots.brickPort(ConnectionPorts.CON3))
+    } else {
+        probots.ledOff(probots.brickPort(ConnectionPorts.CON3))
+    }
 })

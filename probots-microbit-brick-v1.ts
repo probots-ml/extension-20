@@ -25,6 +25,18 @@ enum I2CConnectionPorts {
 };
 
 /**
+ * Available ADC connections ports for the ebrick.
+ */
+enum ADCConnectionPorts {
+    CON1 = 1,   
+    CON2,       
+    CON3,       
+    CON4,       
+    CON5,       
+    CON6  
+};
+
+/**
  * Available 4 pins connections ports for the ebrick.
  */
 enum ConnectionPorts4Pins {
@@ -71,6 +83,16 @@ let pinOut: any = {
     //% subcategory="Miscellaneous"
     //% weight=98
     export function brickPort4Pins(portToUse: ConnectionPorts4Pins): any {
+        return pinOut[portToUse];
+    }
+
+
+    //% block="ADC %portToUse"
+    //% blockId="brickPortADC"
+    //% block.loc.es="ADC %portToUse"
+    //% subcategory="Miscellaneous"
+    //% weight=97
+    export function brickPortADC(portToUse: ADCConnectionPorts): any {
         return pinOut[portToUse];
     }
 

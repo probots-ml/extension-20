@@ -24,16 +24,18 @@ namespace probots{
     export function microphoneDetectSound(db: soundIntensity, myPort: any): boolean {
         
         let initialValue = 0;
-        for(let i = 0; i < 50; i++)
+        let getDB = 0;
+
+        for(let i = 0; i < 100; i++)
         {
-            let getDB = pins.analogReadPin(getAnalogPin(myPort.P1));
+            getDB = pins.analogReadPin(getAnalogPin(myPort.P1));
             if(getDB > initialValue)
             {
                 initialValue = getDB;
             }
         }
         
-        serial.writeLine("db=" + initialValue);
+        //serial.writeLine("db=" + initialValue);
 
         if (db == soundIntensity.HIGH && initialValue >= 1000) {
             return true;
