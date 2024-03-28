@@ -9,6 +9,7 @@ namespace probots {
         return pins.digitalReadPin(myPort.P0) == 1 ? false : true;
     }
 
+/*
     //% block="level soil mosture on %myPort=brickPort between 0 to 100"
     //% block.loc.es="nivel de humedad del suelo en puerto %myPort=brickPort entre 0 y 100"  
     //% weight=99
@@ -19,5 +20,6 @@ namespace probots {
         serial.writeLine("soil=" + soilMostureValue);
         return soilMostureValue;
     }
+    */
 }
 
