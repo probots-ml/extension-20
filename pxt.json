@@ -22,7 +22,8 @@
         "probots-ldr-sensor.ts",
         "probots-ultrasound-sensor.ts",
         "probots-led-rgb-ports.ts",
-        "probots-microphone.ts"
+        "probots-microphone.ts",
+        "probots-soil-mosture.ts"
     ],
     "testFiles": [
         "test.ts"
