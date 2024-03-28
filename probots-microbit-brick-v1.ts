@@ -50,12 +50,30 @@ let pinOut: any = {
 
 //% block="%portToUse"
 //% blockId="brickPort"
-//% block.locale.es="Puerto %portToUse"
+//% block.locale.es="%portToUse"
 //% subcategory="Miscellaneous"
 //% weight=100
-export function brickPort(portToUse: any): any {
+    export function brickPort(portToUse: ConnectionPorts): any {
     return pinOut[portToUse];
 }
+
+    //% block="I2C Port %portToUse"
+    //% blockId="brickPortI2C"
+    //% block.locale.es="Puerto I2C %portToUse"
+    //% subcategory="Miscellaneous"
+    //% weight=99
+    export function brickPortI2C(portToUse: I2CConnectionPorts): any {
+        return pinOut[portToUse];
+}
+
+    //% block="4 pins Port %portToUse"
+    //% blockId="brickPortI2C"
+    //% block.locale.es="Puerto 4 pines %portToUse"
+    //% subcategory="Miscellaneous"
+    //% weight=98
+    export function brickPort4Pins(portToUse: ConnectionPorts4Pins): any {
+        return pinOut[portToUse];
+    }
 
 export function getAnalogPin(pin: DigitalPin): any {
     switch (pin) {
