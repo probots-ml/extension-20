@@ -4,7 +4,7 @@ namespace probots {
      * @param myPort port of connection
     */
     //% blockId=ldrValue
-    //% block="LDR value on %myPort=brickPort || show in console $showInSerialPort"
+    //% block="LDR value on %myPort=brickPortADC || show in console $showInSerialPort"
     //% showInSerialPort.defl=false
     //% block.loc.es="valor de LDR en puerto %myPort=brickPort"  
     //% weight=100
