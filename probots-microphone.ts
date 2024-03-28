@@ -22,17 +22,26 @@ namespace probots{
     //% weight=100
     //% block.loc.es="sonido %db=soundIntensity in puerto %myPort=brickPort"
     export function microphoneDetectSound(db: soundIntensity, myPort: any): boolean {
-        let getDB = pins.analogReadPin(getAnalogPin(myPort.P1));
         
-        serial.writeLine("db=" + getDB);
+        let initialValue = 0;
+        for(let i = 0; i < 50; i++)
+        {
+            let getDB = pins.analogReadPin(getAnalogPin(myPort.P1));
+            if(getDB > initialValue)
+            {
+                initialValue = getDB;
+            }
+        }
+        
+        serial.writeLine("db=" + initialValue);
 
-        if (db == soundIntensity.HIGH && getDB >= 1000) {
+        if (db == soundIntensity.HIGH && initialValue >= 1000) {
             return true;
         }
-        else if (db == soundIntensity.MEDIUM && getDB >= 950) {
+        else if (db == soundIntensity.MEDIUM && initialValue >= 950) {
             return true;
         }
-        else if (db == soundIntensity.LOW && getDB >= 900) {
+        else if (db == soundIntensity.LOW && initialValue >= 900) {
             return true;
         }
         else {
