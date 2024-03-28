@@ -16,7 +16,8 @@ namespace probots{
      * @param myPort port of connection
     */
     //% blockId=microphoneDetectSound
-    //% block="there is a sound %db=soundIntensity in port %myPort=brickPort"
+    //% block="there is a sound %db=soundIntensity in port %myPort=brickPortADC"
+    //% db.defl=soundIntensity.MEDIUM
     //% subcategory="Sound Sensor"
     //% color=#555505
     //% weight=100
