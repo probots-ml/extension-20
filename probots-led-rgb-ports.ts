@@ -1,3 +1,26 @@
+/**
+ * Colors to use in a RGB LED.
+ */
+enum ColorLedRGB {
+    //% block=red
+    Red = 0,
+    //% block=green
+    Green,
+    //% block=blue
+    Blue,
+    //% block=yellow
+    Yellow,
+    //% block=orange
+    Orange,
+    //% block=violet
+    Violet,
+    //% block=cyan
+    Cyan,
+    //% block=white
+    White,
+    //% block=black
+    Black
+}
 
 namespace probots {
 
