@@ -48,11 +48,12 @@ let pinOut: any = {
     8: { P0: DigitalPin.P15,    P1: DigitalPin.P11  }
 }
 
-//% block="%port"
+//% block="%portToUse"
 //% blockId="brickPort"
+//% block.locale.es="Puerto %portToUse"
 //% subcategory="Miscellaneous"
 //% weight=100
-export function brickPort(portToUse: ConnectionPorts): any {
+export function brickPort(portToUse: any): any {
     return pinOut[portToUse];
 }
 
