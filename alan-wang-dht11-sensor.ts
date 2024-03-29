@@ -129,7 +129,11 @@ namespace probots {
         }
 
         //wait 2 sec after query if needed
-        if (wait) basic.pause(2000)
+        if (wait){
+            basic.pause(2000)
+        } else{
+            
+        }
 
     }
 
