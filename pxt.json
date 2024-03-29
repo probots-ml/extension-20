@@ -23,7 +23,8 @@
         "probots-ultrasound-sensor.ts",
         "probots-led-rgb-ports.ts",
         "probots-microphone.ts",
-        "probots-soil-mosture.ts"
+        "probots-soil-mosture.ts",
+        "alan-wang-dht11-sensor.ts"
     ],
     "testFiles": [
         "test.ts"
