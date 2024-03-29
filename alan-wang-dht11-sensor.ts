@@ -27,10 +27,18 @@ namespace probots {
     let _temptype: tempType = tempType.celsius
     let _readSuccessful: boolean = false
     let _sensorresponding: boolean = false
-
+    let _nextTime: number = 0;
+    const  _maxWaitingTime = 2000;
 
     function queryData(DHT: DHTtype, dataPin: DigitalPin, pullUp: boolean, serialOtput: boolean, wait: boolean) {
 
+        if(!wait)
+        {
+            if (input.runningTime() < _nextTime)
+            {
+                return;
+            }
+        }
         //initialize
         let startTime: number = 0
         let endTime: number = 0
@@ -95,6 +103,7 @@ namespace probots {
 
             //read data if checksum ok
             if (_readSuccessful) {
+                _nextTime = input.runningTime() + _maxWaitingTime;
                 if (DHT == DHTtype.DHT11) {
                     //DHT11
                     _humidity = resultArray[0] + resultArray[1] / 100
@@ -167,7 +176,7 @@ namespace probots {
     //% subcategory="DHT11 Sensor"
     //% color=#2835C9
     export function ambientHumidity(myPort: any): number {
-        queryData(DHTtype.DHT11, myPort.P0, false, true, true);
+        queryData(DHTtype.DHT11, myPort.P0, false, true, false);
         return readData(dataType.humidity);
     }
 
@@ -179,7 +188,7 @@ namespace probots {
     //% color=#2835C9
     export function ambientTemperature(myPort: any, scale: tempType): number {  
         selectTempType(scale);
-        queryData(DHTtype.DHT11, myPort.P0, false, true, true);
+        queryData(DHTtype.DHT11, myPort.P0, false, true, false);
         return readData(dataType.temperature);
     }
 }
