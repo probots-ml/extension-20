@@ -1,12 +1,8 @@
-probots.ledOn(probots.brickPort(ConnectionPorts.CON3))
-basic.pause(1000)
-probots.ledOff(probots.brickPort(ConnectionPorts.CON3))
-basic.pause(1000)
 basic.forever(function () {
-    if (probots.soilMosture(probots.brickPort(ConnectionPorts.CON4))) {
-        probots.ledOn(probots.brickPort(ConnectionPorts.CON3))
-    } else {
-        probots.ledOff(probots.brickPort(ConnectionPorts.CON3))
+    if (probots.ambientHumidity(probots.brickPort(ConnectionPorts.CON1)) > 50) {
+        probots.rgbPortOnByTime(probots.brickPort4Pins(ConnectionPorts4Pins.CON7), ColorLedRGB.Red, 1000)
     }
-    basic.showNumber(probots.soilMostureLevel(ConnectionPorts.CON4));
+    if (probots.ambientTemperature(probots.brickPort(ConnectionPorts.CON1), tempType.celsius) > 20) {
+        probots.rgbPortOnByTime(probots.brickPort4Pins(ConnectionPorts4Pins.CON7), ColorLedRGB.Blue, 1000)
+    }
 })

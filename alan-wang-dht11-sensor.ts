@@ -43,8 +43,8 @@ namespace probots {
         for (let index = 0; index < 40; index++) dataArray.push(false)
         for (let index = 0; index < 5; index++) resultArray.push(0)
 
-        _humidity = -99.0
-        _temperature = -99.0
+       // _humidity = -99.0
+        //_temperature = -99.0
         _readSuccessful = false
         _sensorresponding = false
         startTime = input.runningTimeMicros()
@@ -168,7 +168,7 @@ namespace probots {
     }
 
     //% blockId="ambientTemperature"
-    //% block="get humidity on %myPort=brickPort in $scale=tempType"
+    //% block="get temperature on %myPort=brickPort in $scale=tempType"
     //% scale.defl=tempType.celsius
     //% weight=99
     //% subcategory="DHT11 Sensor"
