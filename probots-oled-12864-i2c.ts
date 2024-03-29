@@ -1,5 +1,8 @@
 // Se debe importar la librería:
 // https://github.com/probots-ml/OLED12864_I2C
+// No, no importarla, en su lugar incorporamos el archivo
+// oled-12864-i2c.ts
+
 
 namespace probots{
 
