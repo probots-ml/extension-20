@@ -5,8 +5,7 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*",
-        "OLED12864_I2C": "github:probots-ml/OLED12864_I2C#v1.5.2"
+        "microphone": "*"
     },
     "files": [
         "main.ts",
@@ -26,7 +25,8 @@
         "probots-microphone.ts",
         "probots-soil-mosture.ts",
         "alan-wang-dht11-sensor.ts",
-        "probots-oled-12864-i2c.ts"
+        "probots-oled-12864-i2c.ts",
+        "oled-12864-i2c.ts"
     ],
     "testFiles": [
         "test.ts"
