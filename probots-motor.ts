@@ -70,8 +70,7 @@ namespace probots{
     * Add a motor to a specific port.
     * @param myPort port of motor connection
     */
-    //% block="motor on %myPort=brickPort"
-    //% block.loc.es="sensor IR detecta objeto en puerto %myPort=brickPort"  
+    //% block="motor on %myPort=brickPort" 
     //% weight=100
     //% subcategory="Motor"
     //% color=#A135D9
