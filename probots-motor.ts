@@ -32,7 +32,7 @@ namespace probots{
          * @param dir direction of motor
          * @param speed velocity of motor
          */
-        //% block="motor turn on direction %dir=MotorDirection speed %speed"  
+        //% block="motor turn on direction %dir=MotorDirection speed $speed"  
         //% weight=99
         //% subcategory="Motor"
         //% color=#A135D9
@@ -69,10 +69,11 @@ namespace probots{
     * Add a motor to a specific port.
     * @param myPort port of motor connection
     */
-    //% block="motor on %myPort=brickPort" 
+    //% block="create motor on %myPort=brickPort" 
     //% weight=100
     //% subcategory="Motor"
     //% color=#A135D9
+    //% blockSetVariable=motor
     export function createMotor(myPort: any): Motor {
         let motor = new Motor();
         motor.setpins(myPort.P0, myPort.P1);
