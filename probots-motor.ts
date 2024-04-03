@@ -32,7 +32,7 @@ namespace probots{
          * @param dir direction of motor
          * @param speed velocity of motor
          */
-        //% block="motor turn on direction %dir=MotorDirection speed $speed"  
+        //% block="%motor turn on direction %dir=MotorDirection speed $speed"
         //% weight=99
         //% subcategory="Motor"
         //% color=#A135D9
@@ -54,7 +54,7 @@ namespace probots{
         /**
          * Turn off motor.
          */
-        //% block="motor turn off"  
+        //% block="%motor turn off"
         //% weight=98
         //% subcategory="Motor"
         //% color=#A135D9
