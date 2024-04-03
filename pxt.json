@@ -27,7 +27,8 @@
         "alan-wang-dht11-sensor.ts",
         "probots-oled-12864-i2c.ts",
         "oled-12864-i2c.ts",
-        "probots-servo-motor.ts"
+        "probots-servo-motor.ts",
+        "probots-motor.ts"
     ],
     "testFiles": [
         "test.ts"
