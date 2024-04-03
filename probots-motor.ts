@@ -37,7 +37,6 @@ namespace probots{
         //% subcategory="Motor"
         //% color=#A135D9
         //% speed.min=0 speed.max=100
-        //% dir.defl=MotorDirection.forward
         motorOn(dir: MotorDirection, speed: number): void {
             this.setVelocity(speed);
             switch (dir) {
