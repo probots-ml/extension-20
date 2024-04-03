@@ -26,12 +26,7 @@ namespace probots{
             this.pin2 = pin2;
             this.pina2 = getAnalogPin(pin2);
         }
-
-        //% weight=50
-        //% block="%motor| on direction %dir| speed %speed"
-        //% speed.min=0 speed.max=100
-        //% group="Motors"
-
+       
         /**
          * Set velocity and direction to a Motor.
          * @param dir direction of motor
