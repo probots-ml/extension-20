@@ -29,7 +29,8 @@
         "oled-12864-i2c.ts",
         "probots-servo-motor.ts",
         "probots-motor.ts",
-        "probots-color-sensor.ts"
+        "probots-color-sensor.ts",
+        "probots-serial.ts"
     ],
     "testFiles": [
         "test.ts"
