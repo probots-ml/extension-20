@@ -505,14 +505,13 @@ namespace probots{
         return packRGB(red, green, blue);
     }
 
-    //%block="Probot on $pin=brickPort| of $cantidad_leds|leds"
-    //%cantidad_leds.defl=8
-    //%blockSetVariable=leds_neopixel
+    //% block="Probot on $pin=brickPort| of $cantidad_leds|leds"
+    //% cantidad_leds.defl=8
+    //% blockSetVariable=leds_neopixel
     //% weight=100
     //% subcategory="Led Strip NeoPixel"
     //% color=#CC4599
     export function newStripNeopixel(pin: any, cantidad_leds: number): Strip {
-        //        export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         let strip = new Strip();
         let stride = 3;
         strip.buf = pins.createBuffer(cantidad_leds * stride);
@@ -523,7 +522,6 @@ namespace probots{
         strip.setBrightness(128)
         strip.setPin(pin.P0)
         return strip;
-
     }
 
     /**
