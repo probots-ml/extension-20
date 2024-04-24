@@ -50,6 +50,7 @@ namespace probots{
         _length: number; // number of LEDs
         _mode: NeoPixelMode;
         _matrixWidth: number; // number of leds in a matrix - if any
+        
         /**
          * Shows all LEDs to a given color (range 0-255 for r, g, b).
          * @param rgb RGB color of the LED
@@ -123,6 +124,7 @@ namespace probots{
             }
             this.show();
         }
+
         /**
          * Displays a vertical bar graph based on the `value` and `high` value.
          * If `high` is 0, the chart gets adjusted automatically.
@@ -160,6 +162,7 @@ namespace probots{
             }
             this.show();
         }
+
         /**
          * Set LED to a given color (range 0-255 for r, g, b).
          * You need to call ``show`` to make the changes visible.
@@ -186,6 +189,7 @@ namespace probots{
         setMatrixWidth(width: number) {
             this._matrixWidth = Math.min(this._length, width >> 0);
         }
+
         /**
          * Set LED to a given color (range 0-255 for r, g, b) in a matrix shaped strip
          * You need to call ``show`` to make the changes visible.
@@ -207,6 +211,7 @@ namespace probots{
             let i = x + y * this._matrixWidth;
             this.setPixelColor(i, rgb);
         }
+
         /**
          * For NeoPixels with RGB+W LEDs, set the white LED brightness. This only works for RGB+W NeoPixels.
          * @param pixeloffset position of the LED in the strip
@@ -222,6 +227,7 @@ namespace probots{
                 this.setPixelW(pixeloffset >> 0, white >> 0);
             }
         }
+
         /**
          * Send all the changes to the strip.
          */
@@ -234,6 +240,7 @@ namespace probots{
             // ws2812b.setBufferMode(this.pin, this._mode);
             ws2812b.sendBuffer(this.buf, this.pin);
         }
+
         /**
          * Turn off all LEDs.
          * You need to call ``show`` to make the changes visible.
@@ -246,6 +253,7 @@ namespace probots{
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             this.buf.fill(0, this.start * stride, this._length * stride);
         }
+
         /**
          * Gets the number of pixels declared on the strip
          */
@@ -255,6 +263,7 @@ namespace probots{
         length() {
             return this._length;
         }
+
         /**
          * Set the brightness of the strip. This flag only applies to future operation.
          * @param brightness a measure of LED brightness in 0-255. eg: 255
@@ -266,6 +275,7 @@ namespace probots{
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
         }
+
         /**
          * Apply brightness to current colors using a quadratic easing function.
          **/
@@ -293,6 +303,7 @@ namespace probots{
                 }
             }
         }
+
         /**
          * Create a range of LEDs.
          * @param start offset in the LED strip to start the range
@@ -316,6 +327,7 @@ namespace probots{
             strip._mode = this._mode;
             return strip;
         }
+
         /**
          * Shift LEDs forward and clear with zeros.
          * You need to call ``show`` to make the changes visible.
@@ -330,6 +342,7 @@ namespace probots{
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             this.buf.shift(-offset * stride, this.start * stride, this._length * stride)
         }
+
         /**
          * Rotate LEDs forward.
          * You need to call ``show`` to make the changes visible.
@@ -344,6 +357,7 @@ namespace probots{
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             this.buf.rotate(-offset * stride, this.start * stride, this._length * stride)
         }
+
         /**
          * Set the pin where the neopixel is connected, defaults to P0.
          */
@@ -354,6 +368,7 @@ namespace probots{
             pins.digitalWritePin(this.pin, 0);
             // don't yield to avoid races on initialization
         }
+
         /**
          * Estimates the electrical current (mA) consumed by the current light configuration.
          */
@@ -373,6 +388,7 @@ namespace probots{
             return Math.idiv(this.length() * 7, 10) /* 0.7mA per neopixel */
                 + Math.idiv(p * 480, 10000); /* rought approximation */
         }
+
         private setBufferRGB(offset: number, red: number, green: number, blue: number): void {
             if (this._mode === NeoPixelMode.RGB_RGB) {
                 this.buf[offset + 0] = red;
@@ -383,6 +399,7 @@ namespace probots{
             }
             this.buf[offset + 2] = blue;
         }
+
         private setAllRGB(rgb: number) {
             let red = unpackR(rgb);
             let green = unpackG(rgb);
@@ -399,6 +416,7 @@ namespace probots{
                 this.setBufferRGB(i * stride, red, green, blue)
             }
         }
+
         private setAllW(white: number) {
             if (this._mode !== NeoPixelMode.RGBW)
                 return;
@@ -413,6 +431,7 @@ namespace probots{
                 buf[ledoffset + 3] = white;
             }
         }
+
         private setPixelRGB(pixeloffset: number, rgb: number): void {
             if (pixeloffset < 0
                 || pixeloffset >= this._length)
@@ -430,6 +449,7 @@ namespace probots{
             }
             this.setBufferRGB(pixeloffset, red, green, blue)
         }
+
         private setPixelW(pixeloffset: number, white: number): void {
             if (this._mode !== NeoPixelMode.RGBW)
                 return;
@@ -480,14 +500,40 @@ namespace probots{
         let b = b$ + m;
         return packRGB(r, g, b);
     }
+
     function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
     }
 
+    //%block="Probot on $pin=conexiones_ret| of $cantidad_leds|leds"
+    //%cantidad_leds.defl=8
+    //%blockSetVariable=leds_neopixel
+    //% weight=100
+    //% subcategory="Led Strip NeoPixel"
+    //% color=#CC4599
+    export function newStripNeopixel(pin: any, cantidad_leds: number): Strip {
+        //        export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
+        let strip = new Strip();
+        let stride = 3;
+        strip.buf = pins.createBuffer(cantidad_leds * stride);
+        strip.start = 0;
+        strip._length = cantidad_leds;
+        strip._mode = NeoPixelMode.RGB || NeoPixelMode.RGB;
+        strip._matrixWidth = 0;
+        strip.setBrightness(128)
+        strip.setPin(pin.P0)
+        return strip;
 
-    //% block="$leds=variables_get(leds_neopixel)|show color %rgb=Colores" 
-    //% group="Leds"
-    //% weight=80
+    }
+
+    /**
+    * Show color in the Led Strip NeoPixel.
+    */
+    //% blockId=neoPixelShowColor
+    //% block="$leds=variables_get(leds_neopixel)|show color %rgb=Colores"
+    //% weight=99
+    //% subcategory="Led Strip NeoPixel"
+    //% color=#CC4599
     export function showColor(leds: Strip, rgb: Colors) {
         rgb = rgb >> 0;
         setAllRGB(leds, rgb);
@@ -511,6 +557,7 @@ namespace probots{
             setBufferRGB(leds, i * stride, red, green, blue)
         }
     }
+
     function setBufferRGB(leds: Strip, offset: number, red: number, green: number, blue: number): void {
         if (leds._mode === NeoPixelMode.RGB_RGB) {
             leds.buf[offset + 0] = red;
@@ -521,17 +568,21 @@ namespace probots{
         }
         leds.buf[offset + 2] = blue;
     }
+
     function packRGB(a: number, b: number, c: number): number {
         return ((a & 0xFF) << 16) | ((b & 0xFF) << 8) | (c & 0xFF);
     }
+
     function unpackR(rgb: number): number {
         let r = (rgb >> 16) & 0xFF;
         return r;
     }
+    
     function unpackG(rgb: number): number {
         let g = (rgb >> 8) & 0xFF;
         return g;
     }
+    
     function unpackB(rgb: number): number {
         let b = (rgb) & 0xFF;
         return b;
