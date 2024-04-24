@@ -5,7 +5,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.2"
     },
     "files": [
         "main.ts",
@@ -29,13 +30,14 @@
         "oled-12864-i2c.ts",
         "probots-servo-motor.ts",
         "probots-motor.ts",
-        "probots-color-sensor.ts"
+        "probots-color-sensor.ts",
+        "probots-neopixel.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "6.0.25",
+        "target": "6.0.26",
         "targetId": "microbit"
     },
     "supportedTargets": [
