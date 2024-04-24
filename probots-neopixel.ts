@@ -505,7 +505,7 @@ namespace probots{
         return packRGB(red, green, blue);
     }
 
-    //%block="Probot on $pin=conexiones_ret| of $cantidad_leds|leds"
+    //%block="Probot on $pin=brickPort| of $cantidad_leds|leds"
     //%cantidad_leds.defl=8
     //%blockSetVariable=leds_neopixel
     //% weight=100
