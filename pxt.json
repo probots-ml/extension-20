@@ -33,7 +33,8 @@
         "probots-color-sensor.ts",
         "probots-neopixel.ts",
         "main.py",
-        "probots-ky-013.ts"
+        "probots-ky-013.ts",
+        "probots-ir-flame-sensor.ts"
     ],
     "testFiles": [
         "test.ts"
