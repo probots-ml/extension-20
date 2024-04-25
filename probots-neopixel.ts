@@ -366,7 +366,7 @@ namespace probots{
     //% cantidad_leds.defl=8
     //% blockSetVariable=leds_neopixel
     //% weight=100
-    //% subcategory="Led Strip NeoPixel"
+    //% subcategory="LED Strip NeoPixel"
     //% color=#CC4599
     export function newStripNeopixel(pin: any, cantidad_leds: number): Strip {
         let strip = new Strip();
@@ -386,7 +386,7 @@ namespace probots{
     */
     //% block="$leds=variables_get(leds_neopixel)|show color %rgb=Colores"
     //% weight=99
-    //% subcategory="Led Strip NeoPixel"
+    //% subcategory="LED Strip NeoPixel"
     //% color=#CC4599
     export function showColor(leds: Strip, rgb: Colors) {
         rgb = rgb >> 0;
@@ -399,10 +399,21 @@ namespace probots{
     */
     //% block="$leds=variables_get(leds_neopixel)|show rainbow colors"
     //% weight=98
-    //% subcategory="Led Strip NeoPixel"
+    //% subcategory="LED Strip NeoPixel"
     //% color=#CC4599
     export function showRainbow(leds: Strip): void{      
         leds.showRainbow()
+    }
+
+    /**
+    * Set the brightness on Led Strip NeoPixel.
+    */
+    //% block="set $brightness in $leds=variables_get(leds_neopixel)"
+    //% weight=97
+    //% subcategory="LED Strip NeoPixel"
+    //% color=#CC4599
+    export function setBrightness(leds: Strip, brightness: number):void{
+        leds.setBrightness(brightness);
     }
 
     function setAllRGB(leds: Strip, rgb: number) {
