@@ -1,6 +1,8 @@
-let leds_neopixel = probots.newStripNeopixel(probots.brickPort(ConnectionPorts.CON2), 8, 100)
+let leds_neopixel = probots.newStripNeopixel(probots.brickPort(ConnectionPorts.CON2), 8, 46)
+probots.showColor(leds_neopixel, Colors.Violet)
 basic.forever(function () {
-    probots.showRainbow(leds_neopixel)
-   
-    basic.pause(500)
+
+})
+basic.forever(function () {
+    basic.pause(1000)
 })

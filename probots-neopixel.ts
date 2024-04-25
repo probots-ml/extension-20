@@ -363,7 +363,7 @@ namespace probots{
     }
 
     //% block="Probot on $pin=brickPort| of $ledsQuantity leds | and brightness $brightness"
-    //% cantidad_leds.defl=8
+    //% ledsQuantity.defl=8
     //% brightness.min=1
     //% brightness.max=100
     //% brightness.defl=80
