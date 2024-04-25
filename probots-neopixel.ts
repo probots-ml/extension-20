@@ -413,6 +413,7 @@ namespace probots{
     * Show rainbow colors in the Led Strip NeoPixel.
     */
     //% block="$leds=variables_get(leds_neopixel)|show rainbow colors"
+    //% block.loc.es="leds=variables_get(leds_neopixel)|muestra los colores los colores del arcoiris"
     //% weight=98
     //% subcategory="LED Strip NeoPixel"
     //% color=#CC4599
