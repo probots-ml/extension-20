@@ -364,9 +364,9 @@ namespace probots{
 
     /**
      * Create a new Strip Neopixel, using a specific port and set a desired led brightness.
-     * @param commPort = Port where to connect the Strip Neopixel
-     * @param ledsQuantity = Set the quantity of leds in the Neopixel
-     * @param brightness = Adjust the brightness of the leds in the Neopixel.
+     * @param commPort Port where to connect the Strip Neopixel
+     * @param ledsQuantity Set the quantity of leds in the Neopixel
+     * @param brightness Adjust the brightness of the leds in the Neopixel.
      */
     //% block="Probot on $commPort=brickPort| of $ledsQuantity leds | and brightness $brightness"
     //% ledsQuantity.defl=8
