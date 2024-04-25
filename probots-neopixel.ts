@@ -394,6 +394,17 @@ namespace probots{
         leds.show();
     }
 
+    /**
+    * Show rainbow colors in the Led Strip NeoPixel.
+    */
+    //% block="$leds=variables_get(leds_neopixel)|show rainbow colors"
+    //% weight=98
+    //% subcategory="Led Strip NeoPixel"
+    //% color=#CC4599
+    export function showRainbow(leds: Strip): void{      
+        leds.showRainbow()
+    }
+
     function setAllRGB(leds: Strip, rgb: number) {
         let red = unpackR(rgb);
         let green = unpackG(rgb);
