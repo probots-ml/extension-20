@@ -362,7 +362,13 @@ namespace probots{
         return packRGB(red, green, blue);
     }
 
-    //% block="Probot on $pin=brickPort| of $ledsQuantity leds | and brightness $brightness"
+    /**
+     * Create a new Strip Neopixel, using a specific port and set a desired led brightness.
+     * @param commPort = Port where to connect the Strip Neopixel
+     * @param ledsQuantity = Set the quantity of leds in the Neopixel
+     * @param brightness = Adjust the brightness of the leds in the Neopixel.
+     */
+    //% block="Probot on $commPort=brickPort| of $ledsQuantity leds | and brightness $brightness"
     //% ledsQuantity.defl=8
     //% brightness.min=1
     //% brightness.max=100
@@ -371,7 +377,7 @@ namespace probots{
     //% weight=100
     //% subcategory="LED Strip NeoPixel"
     //% color=#CC4599
-    export function newStripNeopixel(pin: any, ledsQuantity: number, brightness: number): Strip {
+    export function newStripNeopixel(commPort: any, ledsQuantity: number, brightness: number): Strip {
         
         let strip = new Strip();
         let stride = 3;
@@ -385,7 +391,7 @@ namespace probots{
         brightness = pins.map(brightness, 0, 100, 0, 255);
         strip.setBrightness(brightness);
 
-        strip.setPin(pin.P0);
+        strip.setPin(commPort.P0);
 
         return strip;
     }
