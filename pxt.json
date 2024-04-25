@@ -32,7 +32,8 @@
         "probots-motor.ts",
         "probots-color-sensor.ts",
         "probots-neopixel.ts",
-        "main.py"
+        "main.py",
+        "probots-ky-013.ts"
     ],
     "testFiles": [
         "test.ts"
