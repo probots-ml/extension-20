@@ -362,22 +362,31 @@ namespace probots{
         return packRGB(red, green, blue);
     }
 
-    //% block="Probot on $pin=brickPort| of $cantidad_leds|leds"
+    //% block="Probot on $pin=brickPort| of $ledsQuantity leds | and brightness $brightness"
     //% cantidad_leds.defl=8
+    //% brightness.min=1
+    //% brightness.max=100
+    //% brightness.defl=80
     //% blockSetVariable=leds_neopixel
     //% weight=100
     //% subcategory="LED Strip NeoPixel"
     //% color=#CC4599
-    export function newStripNeopixel(pin: any, cantidad_leds: number): Strip {
+    export function newStripNeopixel(pin: any, ledsQuantity: number, brightness: number): Strip {
+        
         let strip = new Strip();
         let stride = 3;
-        strip.buf = pins.createBuffer(cantidad_leds * stride);
+
+        strip.buf = pins.createBuffer(ledsQuantity * stride);
         strip.start = 0;
-        strip._length = cantidad_leds;
+        strip._length = ledsQuantity;
         strip._mode = NeoPixelMode.RGB || NeoPixelMode.RGB;
         strip._matrixWidth = 0;
-        strip.setBrightness(128)
-        strip.setPin(pin.P0)
+
+        brightness = pins.map(brightness, 0, 100, 0, 255);
+        strip.setBrightness(brightness);
+
+        strip.setPin(pin.P0);
+
         return strip;
     }
 
@@ -405,16 +414,6 @@ namespace probots{
         leds.showRainbow()
     }
 
-    /**
-    * Set the brightness on Led Strip NeoPixel.
-    */
-    //% block="set $brightness in $leds=variables_get(leds_neopixel)"
-    //% weight=97
-    //% subcategory="LED Strip NeoPixel"
-    //% color=#CC4599
-    export function setBrightness(leds: Strip, brightness: number):void{
-        leds.setBrightness(brightness);
-    }
 
     function setAllRGB(leds: Strip, rgb: number) {
         let red = unpackR(rgb);
