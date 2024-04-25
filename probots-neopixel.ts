@@ -417,6 +417,7 @@ namespace probots{
     //% weight=98
     //% subcategory="LED Strip NeoPixel"
     //% color=#CC4599
+    //% jsdoc.loc.es="Muestra una tira de LEDS Neopixel con los colores del arcoiris."
     export function showRainbow(leds: Strip): void{      
         leds.showRainbow()
     }
