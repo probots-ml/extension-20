@@ -1,6 +1,6 @@
 {
     "name": "Extension 2.0 - Copy",
-    "version": "0.22.1",
+    "version": "0.23.0",
     "description": "",
     "dependencies": {
         "core": "*",
