@@ -40,6 +40,7 @@ enum ADCConnectionPorts {
  * Available 4 pins connections ports for the ebrick.
  */
 enum ConnectionPorts4Pins {
+    CON6 = 6,
     CON7 = 7
 };
 
