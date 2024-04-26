@@ -37,7 +37,8 @@
         "probots-ir-flame-sensor.ts",
         "probots-capacitive-sensor.ts",
         "probots-water-level.ts",
-        "probots-buzzer-active.ts"
+        "probots-buzzer-active.ts",
+        "probots-buzzer-pasive.ts"
     ],
     "testFiles": [
         "test.ts"
