@@ -11,11 +11,12 @@
     "files": [
         "main.ts",
         "README.md",
+        "probots-buzzer-active.ts",
+        "probots-buzzer-pasive.ts",
         "alan-wang-dht11-sensor.ts",
         "oled-12864-i2c.ts",
         "main.py",
-        "probots-microbit-brick-v1.ts",
-        "probots.ts",
+        "probots-capacitive-sensor.ts",
         "probots-led.ts",
         "probots-led-rgb-ports.ts",
         "probots-led-laser.ts",
@@ -35,10 +36,9 @@
         "probots-motor.ts",
         "probots-ky-013.ts",
         "probots-ir-flame-sensor.ts",
-        "probots-capacitive-sensor.ts",
         "probots-water-level.ts",
-        "probots-buzzer-active.ts",
-        "probots-buzzer-pasive.ts"
+        "probots-microbit-brick-v1.ts",
+        "probots.ts"
     ],
     "testFiles": [
         "test.ts"
