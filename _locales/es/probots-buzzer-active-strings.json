@@ -1,1 +1,3 @@
-
+{
+  "buzzerActiveOff|block": "desactivar buzzer en puerto %myPort=brickPort4Pins"
+}
