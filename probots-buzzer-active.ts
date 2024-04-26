@@ -18,7 +18,7 @@ namespace probots{
 
     //% block="turn buzzer off on %myPort=brickPort4Pins"
     //% block.loc.es="desactivar buzzer en puerto %myPort=brickPort4Pins"
-    //% weight=100
+    //% weight=99
     //% subcategory="Active Buzzer"
     //% color=#A39122
     export function buzzerActiveOff(myPort: any): void {
