@@ -6,7 +6,7 @@ namespace probots {
     //% block="distance on %myPort=brickPort"
     //% block.loc.es="distancia en puerto %myPort=brickPort"  
     //% weight=100
-    //% subcategory="Ultrasound Sensor"
+    //% subcategory="Ultrasonic Sensor"
     //% color=#F025A8
     export function ultrasoundDistance(myPort: any): number {
         // send pulse
