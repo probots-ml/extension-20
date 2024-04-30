@@ -38,7 +38,8 @@
         "probots-ir-flame-sensor.ts",
         "probots-water-level.ts",
         "probots-microbit-brick-v1.ts",
-        "probots.ts"
+        "probots.ts",
+        "_locales/es/probots-buzzer-active-strings.json"
     ],
     "testFiles": [
         "test.ts"
