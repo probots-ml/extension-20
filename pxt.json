@@ -39,8 +39,8 @@
         "probots-water-level.ts",
         "probots-microbit-brick-v1.ts",
         "probots.ts",
-        "_locales/es/probots-buzzer-active-strings.json",
-        "_locales/es/alan-wang-dht11-sensor-strings.json"
+        "_locales/es/Extension 2.0 - Copy-jsdoc-strings.json",
+        "_locales/es/Extension 2.0 - Copy-strings.json"
     ],
     "testFiles": [
         "test.ts"
