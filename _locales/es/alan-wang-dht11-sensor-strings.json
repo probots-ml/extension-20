@@ -1,0 +1,6 @@
+{
+    "dataType.humidty|block" : "humedad",
+    "dataType.temperature|block": "temperatura",
+    "tempType.celcius|block":"Centígrado °C",
+    "tempType.fahrenheit|block":"Fahrenheit °F"
+}
