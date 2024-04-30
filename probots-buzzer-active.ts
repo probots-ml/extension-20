@@ -7,7 +7,6 @@
 namespace probots{
 
     //% block="turn buzzer on on %myPort=brickPort4Pins"
-    //% block.loc.es="activar buzzer en puerto %myPort=brickPort4Pins"
     //% weight=100
     //% subcategory="Active Buzzer"
     //% color=#A39122
@@ -17,7 +16,6 @@ namespace probots{
     }
 
     //% block="turn buzzer off on %myPort=brickPort4Pins"
-    //% block.loc.es="desactivar buzzer en puerto %myPort=brickPort4Pins"
     //% weight=99
     //% subcategory="Active Buzzer"
     //% color=#A39122
