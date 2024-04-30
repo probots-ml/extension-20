@@ -169,7 +169,6 @@ namespace probots {
     /**
     * Get Humidity in the ambient. 
     */
-
     //% blockId="ambientHumidity"
     //% block="get humidity on %myPort=brickPort"
     //% weight=100

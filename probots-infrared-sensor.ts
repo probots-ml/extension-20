@@ -6,8 +6,7 @@ namespace probots {
      * Ideal to distinguish black from white colors.
      * @param myPort port of connection
     */
-    //% block="sensor IR detects objects on %myPort=brickPort"
-    //% block.loc.es="sensor IR detecta objeto en puerto %myPort=brickPort"  
+    //% block="sensor IR detects objects on %myPort=brickPort"  
     //% weight=100
     //% subcategory="IR Sensor"
     //% color=#A1A5A6
