@@ -9,6 +9,11 @@ enum joystickAction {
 
 namespace probots {  
     
+    /**
+     * Get the value of a joystick x axis, y axis or button state.
+     * @param myPort Set the port read the joystick state.
+     * @param action Read the the x or y axis or select a button.
+     */
     //% block="get value on %myPort=brickPort2ADC of $action=joystickAction"
     //% blockId=joystickAt
     //% $action.defl=joystickAction.X_AXIS
