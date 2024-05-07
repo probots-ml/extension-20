@@ -7,8 +7,7 @@ enum joystickAction {
     BUTTON
 }
 
-namespace probots{
-    
+namespace probots{  
     /**
     * Get the value of Joystick X axis, Y axis or the button state.
     * @param myPort use port with 2 analog in pins and 1 digital in pin.
