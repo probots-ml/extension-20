@@ -11,6 +11,8 @@ namespace probots {
     
     /**
      * Get the value of a joystick x axis, y axis or button state.
+     * The value of X and Y varies from 0 to 100.
+     * The value of the button is equal to 0 (not pressed) and 1 (pressed).
      * @param myPort Set the port read the joystick state.
      * @param action Read the the x or y axis or select a button.
      */
@@ -23,10 +25,10 @@ namespace probots {
     export function joystickAt(myPort: any, action: joystickAction): number {
         switch (action) {
             case joystickAction.X_AXIS:
-                return pins.digitalReadPin(myPort.P1);
+                return pins.map(pins.analogReadPin(myPort.P1), 0, 1023, 0 , 100) ;
                 break;
             case joystickAction.Y_AXIX:
-                return pins.analogReadPin(myPort.P0);
+                return  pins.map(pins.analogReadPin(myPort.P0), 0, 1023, 0, 100);
                 break;
             case joystickAction.BUTTON:
                 let buttonState = pins.digitalReadPin(myPort.P3);
