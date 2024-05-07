@@ -17,7 +17,7 @@ namespace probots{
     //% weight=100
     //% subcategory="Joystick"
     //% color=#EE3007
-    export function joystick(myPort: any, action: joystickAction): number {
+    export function joystick(myPort: any, action: any): number {
         switch (action) {
             case joystickAction.X_AXIS:
                 return pins.digitalReadPin(myPort.P1);
