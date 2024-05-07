@@ -9,11 +9,13 @@ enum joystickAction {
 
 namespace probots {  
     
-    //% block="get value on %myPort=brickPort2ADC of %action=joystickAction"
+    //% block="get value on %myPort=brickPort2ADC of $action=joystickAction"
+    //% blockId=joystickAt
+    //% $action.defl=joystickAction.X_AXIS
     //% weight=100
     //% subcategory="Joystick"
     //% color=#EE3007
-    export function joystickAt(myPort: any, action: any): number {
+    export function joystickAt(myPort: any, action: joystickAction): number {
         switch (action) {
             case joystickAction.X_AXIS:
                 return pins.digitalReadPin(myPort.P1);
