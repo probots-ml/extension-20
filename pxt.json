@@ -26,6 +26,7 @@
         "probots-push-button.ts",
         "probots-limit-switch.ts",
         "probots-potentiometer.ts",
+        "probots-joystick.ts",
         "probots-hall-sensor.ts",
         "probots-infrared-sensor.ts",
         "probots-ultrasound-sensor.ts",
@@ -40,8 +41,7 @@
         "probots-microbit-brick-v1.ts",
         "probots.ts",
         "_locales/es/Extension 2.0 - Copy-jsdoc-strings.json",
-        "_locales/es/Extension 2.0 - Copy-strings.json",
-        "probots-joystick.ts"
+        "_locales/es/Extension 2.0 - Copy-strings.json"
     ],
     "testFiles": [
         "test.ts"
