@@ -49,7 +49,8 @@ enum ConnectionPorts4Pins {
  * Ports with 2 analog pins connections.
  */
 enum ConnectionPorts2AnalogPins {
-    CON6 = 6
+    CON6 = 6,
+    CONx = 6
 };
 
 namespace probots{
