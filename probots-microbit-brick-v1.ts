@@ -13,7 +13,7 @@ enum ConnectionPorts {
 };
 
 /**
- * Available I2C connections ports for the ebrick.
+ * Ports with I2C connections for the ebrick.
  */
 enum I2CConnectionPorts {
     CON1 = 1,   
@@ -25,7 +25,7 @@ enum I2CConnectionPorts {
 };
 
 /**
- * Available ADC connections ports for the ebrick.
+ * Ports with ADC connections for the ebrick.
  */
 enum ADCConnectionPorts {
     CON1 = 1,   
@@ -37,11 +37,19 @@ enum ADCConnectionPorts {
 };
 
 /**
- * Available 4 pins connections ports for the ebrick.
+ * Ports with 4 pins connections for the ebrick.
  */
 enum ConnectionPorts4Pins {
     CON6 = 6,
     CON7 = 7
+};
+
+
+/**
+ * Ports with 2 analog pins connections.
+ */
+enum ConnectionPorts2AnalogPins {
+    CON6 = 6
 };
 
 namespace probots{
@@ -52,10 +60,10 @@ namespace probots{
 let pinOut: any = {
     1: { P0: DigitalPin.P8,     P1: DigitalPin.P0,  P2: DigitalPin.P19, P3: DigitalPin.P20},
     2: { P0: DigitalPin.P12,    P1: DigitalPin.P1,  P2: DigitalPin.P19, P3: DigitalPin.P20},
-    3: { P0: DigitalPin.P16,    P1: DigitalPin.P2,  P2: DigitalPin.P19, P3: DigitalPin.P20},
+    3: { P0: DigitalPin.P9,     P1: DigitalPin.P2,  P2: DigitalPin.P19, P3: DigitalPin.P20},
     4: { P0: DigitalPin.P6,     P1: DigitalPin.P3,  P2: DigitalPin.P19, P3: DigitalPin.P20},
     5: { P0: DigitalPin.P7,     P1: DigitalPin.P4,  P2: DigitalPin.P19, P3: DigitalPin.P20},
-    6: { P0: DigitalPin.P9,     P1: DigitalPin.P10, P2: DigitalPin.P5,  P3: DigitalPin.P11},
+    6: { P0: DigitalPin.P2,     P1: DigitalPin.P10, P2: DigitalPin.P5,  P3: DigitalPin.P11},
     7: { P0: DigitalPin.P13,    P1: DigitalPin.P14, P2: DigitalPin.P15, P3: DigitalPin.P16},
     8: { P0: DigitalPin.P15,    P1: DigitalPin.P11, P2: DigitalPin.P19, P3: DigitalPin.P20}
 }
@@ -69,31 +77,40 @@ let pinOut: any = {
     return pinOut[portToUse];
 }
 
-    //% block="I2C %portToUse"
-    //% blockId="brickPortI2C"
-    //% block.locales.es="I2C %portToUse"
-    //% subcategory="Miscellaneous"
-    //% weight=99
+//% block="I2C %portToUse"
+//% blockId="brickPortI2C"
+//% block.locales.es="I2C %portToUse"
+//% subcategory="Miscellaneous"
+//% weight=99
     export function brickPortI2C(portToUse: I2CConnectionPorts): any {
         return pinOut[portToUse];
 }
 
-    //% block="4 pins %portToUse"
-    //% blockId="brickPort4Pins"
-    //% block.locales.es="4 pines %portToUse"
-    //% subcategory="Miscellaneous"
-    //% weight=98
+//% block="4 pins %portToUse"
+//% blockId="brickPort4Pins"
+//% block.locales.es="4 pines %portToUse"
+//% subcategory="Miscellaneous"
+//% weight=98
     export function brickPort4Pins(portToUse: ConnectionPorts4Pins): any {
         return pinOut[portToUse];
     }
 
 
-    //% block="ADC %portToUse"
-    //% blockId="brickPortADC"
-    //% block.loc.es="ADC %portToUse"
-    //% subcategory="Miscellaneous"
-    //% weight=97
+//% block="ADC %portToUse"
+//% blockId="brickPortADC"
+//% block.loc.es="ADC %portToUse"
+//% subcategory="Miscellaneous"
+//% weight=97
     export function brickPortADC(portToUse: ADCConnectionPorts): any {
+        return pinOut[portToUse];
+    }
+
+
+//% block="2 ADC %portToUse"
+//% blockId="brickPort2ADC"
+//% subcategory="Miscellaneous"
+//% weight=96
+    export function brickPort2ADC(portToUse: ConnectionPorts2AnalogPins): any {
         return pinOut[portToUse];
     }
 

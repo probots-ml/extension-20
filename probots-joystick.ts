@@ -11,22 +11,23 @@ namespace probots{
     
     /**
     * Get the value of Joystick X axis, Y axis or the button state.
+    * @param port use port with 2 analog in pins and 1 digital in pin.
     * @param action get the measurament of joystick axis or button state.
     */
-    //% block="get value of %action=joystickAction"  
+    //% block="get value of %action=joystickAction on %myport=brickPort2ADC"
     //% weight=100
     //% subcategory="Joystick"
     //% color=#EE3007
-    export function joystick(action: joystickAction): number {
+    export function joystick(myPort: any, action: joystickAction): number {
         switch (action) {
             case joystickAction.X_AXIS:
-                return pins.digitalReadPin(DigitalPin.P9);
+                return pins.digitalReadPin(myPort.P1);
                 break;
             case joystickAction.Y_AXIX:
-                return pins.analogReadPin(AnalogPin.P10);
+                return pins.analogReadPin(myPort.P0);
                 break;
             case joystickAction.BUTTON:
-                let buttonState = pins.digitalReadPin(DigitalPin.P5);
+                let buttonState = pins.digitalReadPin(myPort.P3);
                 if (buttonState == 0) {
                     buttonState = 1;
                 } else {
