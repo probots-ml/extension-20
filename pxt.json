@@ -40,7 +40,8 @@
         "probots-microbit-brick-v1.ts",
         "probots.ts",
         "_locales/es/Extension 2.0 - Copy-jsdoc-strings.json",
-        "_locales/es/Extension 2.0 - Copy-strings.json"
+        "_locales/es/Extension 2.0 - Copy-strings.json",
+        "probots-joystick.ts"
     ],
     "testFiles": [
         "test.ts"
