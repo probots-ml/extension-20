@@ -14,7 +14,7 @@ namespace probots{
     * @param port use port with 2 analog in pins and 1 digital in pin.
     * @param action get the measurament of joystick axis or button state.
     */
-    //% block="get value of %action=joystickAction on %myport=brickPort2ADC"
+    //% block="get value of %action=joystickAction on %myPort=brickPort2ADC"
     //% weight=100
     //% subcategory="Joystick"
     //% color=#EE3007

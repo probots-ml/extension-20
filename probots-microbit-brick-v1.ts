@@ -70,7 +70,6 @@ let pinOut: any = {
 
 //% block="%portToUse"
 //% blockId="brickPort"
-//% block.locales.es="%portToUse"
 //% subcategory="Miscellaneous"
 //% weight=100
     export function brickPort(portToUse: ConnectionPorts): any {
@@ -79,7 +78,6 @@ let pinOut: any = {
 
 //% block="I2C %portToUse"
 //% blockId="brickPortI2C"
-//% block.locales.es="I2C %portToUse"
 //% subcategory="Miscellaneous"
 //% weight=99
     export function brickPortI2C(portToUse: I2CConnectionPorts): any {
@@ -88,7 +86,6 @@ let pinOut: any = {
 
 //% block="4 pins %portToUse"
 //% blockId="brickPort4Pins"
-//% block.locales.es="4 pines %portToUse"
 //% subcategory="Miscellaneous"
 //% weight=98
     export function brickPort4Pins(portToUse: ConnectionPorts4Pins): any {
@@ -98,7 +95,6 @@ let pinOut: any = {
 
 //% block="ADC %portToUse"
 //% blockId="brickPortADC"
-//% block.loc.es="ADC %portToUse"
 //% subcategory="Miscellaneous"
 //% weight=97
     export function brickPortADC(portToUse: ADCConnectionPorts): any {
