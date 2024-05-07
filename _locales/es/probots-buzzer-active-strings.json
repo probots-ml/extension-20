@@ -1,4 +1,0 @@
-{
-  "probots.buzzerActiveOff|block": "apagar buzzer en %myPort=brickPort4Pins",
-  "probots.buzzerActiveOn|block": "encender buzzer en %myPort=brickPort4Pins"
-}

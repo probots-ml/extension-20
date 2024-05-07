@@ -1,8 +1,0 @@
-{
-    "dataType.humidty|block": "humedad",
-    "dataType.temperature|block": "temperatura",
-    "tempType.celcius|block": "Centígrado °C",
-    "tempType.fahrenheit|block": "Fahrenheit °F",
-    "probots.ambientHumidity|block": "humedad en %myPort=brickPort",
-    "probots.ambientTemperature|block": "temperatura en %myPort=brickPort in $scale=tempType"
-}
