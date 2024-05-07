@@ -49,8 +49,7 @@ enum ConnectionPorts4Pins {
  * Ports with 2 analog pins connections.
  */
 enum ConnectionPorts2AnalogPins {
-    CON6 = 6,
-    CONx = 6
+    CON6 = 6
 };
 
 namespace probots{
@@ -103,7 +102,7 @@ let pinOut: any = {
     }
 
 
-//% block="2 ADC %portToUse"
+//% block="ADC 2 wires %portToUse"
 //% blockId="brickPort2ADC"
 //% subcategory="Miscellaneous"
 //% weight=96
