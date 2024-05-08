@@ -30,7 +30,9 @@ namespace probots {
     //% weight=90 color=#99AA05
     export function rgbPortOn(myPort: any, color: ColorLedRGB): void {
         
-        rgbPortOff(myPort);
+        pins.digitalWritePin(myPort.P2, 0);
+        pins.digitalWritePin(myPort.P1, 0);
+        pins.digitalWritePin(myPort.P0, 0);
 
         switch (color) {
             case ColorLedRGB.Black:
