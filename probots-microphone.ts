@@ -51,4 +51,19 @@ namespace probots{
             return false;
         }
     }
+
+    /**
+     * Detects a sound using a microphone, reading the intensity.
+     * @param myPort port of connection
+    */
+    //% blockId=microphoneRead
+    //% block="get the sound in port %myPort=brickPortADC"
+    //% subcategory="Sound Sensor"
+    //% color=#555505
+    //% weight=99
+    export function microphoneRead(myPort: any): number {  
+        let getDB = 0;     
+        getDB = pins.analogReadPin(getAnalogPin(myPort.P1));
+        return getDB;   
+    }
 }
