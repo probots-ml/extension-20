@@ -1,4 +1,3 @@
 basic.forever(function () {
-    serial.writeValue("Distancia", probots.ultrasoundDistance(probots.brickPort(ConnectionPorts.CON1)))
-    basic.pause(100)
+    serial.writeValue("x", probots.microphoneDeltaSound(soundIntensity.LOW, probots.brickPortADC(ADCConnectionPorts.CON1)))
 })

@@ -26,6 +26,8 @@ namespace probots{
         return getDB;   
     }
 
+    let lastMax = 0;
+    let lastMin = 0;
 
     /**
      * Detects if a sound is at least equal to the selected intensity.
@@ -91,8 +93,12 @@ namespace probots{
             min = Math.min(min, getDB);
         }
 
-        delta = max - min;
+        delta = 0.5 * (max + lastMax) - 0.5 * (min + lastMin);
        
+
+        lastMax = max;
+        lastMin = min;
+
        return delta;
     /*
         if (db == soundIntensity.HIGH && delta >= 20) {
