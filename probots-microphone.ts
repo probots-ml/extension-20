@@ -9,22 +9,7 @@ enum soundIntensity {
 }
 
 namespace probots{
-    /**
-     * Detects a sound using a microphone, reading the intensity.
-     * The sound intensity can vary from 0 to 100.
-     * @param myPort port of connection
-    */
-    //% blockId=microphoneRead
-    //% block="get the intensity of a sound in port %myPort=brickPortADC"
-    //% subcategory="Sound Sensor"
-    //% color=#88DD05
-    //% weight=100
-    export function microphoneRead(myPort: any): number {  
-        let getDB = 0;     
-        getDB = pins.analogReadPin(getAnalogPin(myPort.P1));
-        getDB = pins.map(getDB, 0, 1023, 0, 100);
-        return getDB;   
-    }
+    
 
     let lastMax = 0;
     let lastMin = 0;
@@ -39,7 +24,7 @@ namespace probots{
     //% db.defl=soundIntensity.MEDIUM
     //% subcategory="Sound Sensor"
     //% color=#88DD05
-    //% weight=99
+    //% weight=100
     export function microphoneDetectSound(db: soundIntensity, myPort: any): boolean {
 
         let deltaSound = microphoneDeltaSound(myPort);
@@ -67,7 +52,7 @@ namespace probots{
     //% block="get sound in port %myPort=brickPortADC"
     //% subcategory="Sound Sensor"
     //% color=#88DD05
-    //% weight=98
+    //% weight=99
     export function microphoneDeltaSound(myPort: any): number {
 
         let getDB = 0;
