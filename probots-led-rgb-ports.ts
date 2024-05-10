@@ -30,56 +30,61 @@ namespace probots {
     //% weight=90 color=#99AA05
     export function rgbPortOn(myPort: any, color: ColorLedRGB): void {
         
-        pins.digitalWritePin(myPort.P2, 0);
-        pins.digitalWritePin(myPort.P1, 0);
-        pins.digitalWritePin(myPort.P0, 0);
+        //2024-05-10: invert green and blue
+        let ledRed = myPort.P2;
+        let ledGreen = myPort.P1;
+        let ledBlue = myPort.P0;
+
+        pins.digitalWritePin(ledRed, 0);
+        pins.digitalWritePin(ledGreen, 0);
+        pins.digitalWritePin(ledBlue, 0);
 
         switch (color) {
             case ColorLedRGB.Black:
-                pins.digitalWritePin(myPort.P2, 0);
-                pins.digitalWritePin(myPort.P1, 0);
-                pins.digitalWritePin(myPort.P0, 0);
+                pins.digitalWritePin(ledRed, 0);
+                pins.digitalWritePin(ledGreen, 0);
+                pins.digitalWritePin(ledBlue, 0);
                 break;
             case ColorLedRGB.White:
-                pins.digitalWritePin(myPort.P2, 1);
-                pins.digitalWritePin(myPort.P1, 1);
-                pins.digitalWritePin(myPort.P0, 1);
+                pins.digitalWritePin(ledRed, 1);
+                pins.digitalWritePin(ledGreen, 1);
+                pins.digitalWritePin(ledBlue, 1);
                 break;
             case ColorLedRGB.Red:
-                pins.digitalWritePin(myPort.P2, 1);
-                pins.digitalWritePin(myPort.P1, 0);
-                pins.digitalWritePin(myPort.P0, 0);
+                pins.digitalWritePin(ledRed, 1);
+                pins.digitalWritePin(ledGreen, 0);
+                pins.digitalWritePin(ledBlue, 0);
                 break;
             case ColorLedRGB.Green:
-                pins.digitalWritePin(myPort.P2, 0);
-                pins.digitalWritePin(myPort.P1, 0);
-                pins.digitalWritePin(myPort.P0, 1);
+                pins.digitalWritePin(ledRed, 0);
+                pins.digitalWritePin(ledGreen, 1);
+                pins.digitalWritePin(ledBlue, 0);
                 break;
             case ColorLedRGB.Blue:
-                pins.digitalWritePin(myPort.P2, 0);
-                pins.digitalWritePin(myPort.P1, 1);
-                pins.digitalWritePin(myPort.P0, 0);
+                pins.digitalWritePin(ledRed, 0);
+                pins.digitalWritePin(ledGreen, 0);
+                pins.digitalWritePin(ledBlue, 1);
                 break;
             case ColorLedRGB.Yellow:
-                pins.analogWritePin(probots.getAnalogPin(myPort.P2), 1023); // red
-                pins.digitalWritePin(myPort.P1, 0); // blue
-                pins.analogWritePin(probots.getAnalogPin(myPort.P0), 128); // green
+                pins.analogWritePin(probots.getAnalogPin(ledRed), 1023); // red
+                pins.analogWritePin(probots.getAnalogPin(ledGreen), 128); // green
+                pins.digitalWritePin(ledBlue, 0); // blue               
                 break;
             case ColorLedRGB.Orange:
                 //100% red 64.7% green 0% blue
-                pins.digitalWritePin(myPort.P2, 1); //red
-                pins.digitalWritePin(myPort.P1, 0); //blue
-                pins.analogWritePin(probots.getAnalogPin(myPort.P0), 32);
+                pins.digitalWritePin(ledRed, 1); //red
+                pins.analogWritePin(probots.getAnalogPin(ledGreen), 32);
+                pins.digitalWritePin(ledBlue, 0); //blue
                 break;
             case ColorLedRGB.Violet:
-                pins.digitalWritePin(myPort.P2, 1);
-                pins.digitalWritePin(myPort.P1, 1);
-                pins.digitalWritePin(myPort.P0, 0);
+                pins.digitalWritePin(ledRed, 1);
+                pins.digitalWritePin(ledGreen, 0);
+                pins.digitalWritePin(ledBlue, 1);
                 break;
             case ColorLedRGB.Cyan:
-                pins.digitalWritePin(myPort.P2, 0);
-                pins.digitalWritePin(myPort.P1, 1);
-                pins.digitalWritePin(myPort.P0, 1);
+                pins.digitalWritePin(ledRed, 0);
+                pins.digitalWritePin(ledGreen, 1);
+                pins.digitalWritePin(ledBlue, 1);
                 break;
             default: break;
         }
