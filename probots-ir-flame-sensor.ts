@@ -11,8 +11,10 @@ namespace probots {
     //% subcategory="IR Flame Sensor"
     //% color=#28C2B9
     export function flameSensor(myPort: any): boolean {     
-
+       
+        led.enable(false);
         let irFlame = pins.analogReadPin(getAnalogPin(myPort.P1));
+        led.enable(true);
         
         if(irFlame >= 512)
         {
