@@ -10,7 +10,14 @@ namespace probots {
     //% subcategory="Soil Mosture"
     //% color=#BC21BC
     export function soilMosture(myPort: any): boolean {
-        return pins.digitalReadPin(myPort.P0) == 1 ? false : true
+        led.enable(false)
+        let result =  pins.digitalReadPin(myPort.P0);
+        led.enable(true);
+        if(result == 1){
+            return false;
+        } else {
+            return true;
+        }
     }
 
 
@@ -24,8 +31,10 @@ namespace probots {
     //% subcategory="Soil Mosture"
     //% color=#BC21BC
     export function soilMostureLevel(myPort: any): number {
+        led.enable(false);
         let soilMostureValue = pins.map(pins.analogReadPin(getAnalogPin(myPort.P1)), 1023, 0, 0, 100)
         //serial.writeLine("soil=" + soilMostureValue);
+        led.enable(true);
         return soilMostureValue;
     }
 }
