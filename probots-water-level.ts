@@ -11,9 +11,9 @@ namespace probots {
     //% subcategory="Water Level"
     //% color=#F93274
     export function waterLevel(myPort: any): number {
-
+        led.enable(false);
         let actualLevel = pins.analogReadPin(getAnalogPin(myPort.P1));
-        
+        led.enable(true);
         return pins.map(actualLevel, 0, 1023, 0, 100);
     }
 }
