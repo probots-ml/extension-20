@@ -11,9 +11,10 @@ namespace probots {
     //% subcategory="IR Sensor"
     //% color=#A1A5A6
     export function infraredIsOn(myPort: any): boolean {
-
-        return pins.digitalReadPin(myPort.P0) == 1? true : false;
-        
+        led.enable(false);
+        let result = pins.digitalReadPin(myPort.P0) == 1? true : false;
+        led.enable(true);
+        return result;
     }
 }
 
