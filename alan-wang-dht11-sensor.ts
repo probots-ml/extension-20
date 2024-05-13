@@ -39,6 +39,9 @@ namespace probots {
                 return;
             }
         }
+
+        led.enable(false);
+
         //initialize
         let startTime: number = 0
         let endTime: number = 0
@@ -137,6 +140,8 @@ namespace probots {
 
         }
 
+        led.enable(true);
+
         //wait 2 sec after query if needed
         if (wait){
             basic.pause(2000)
@@ -175,10 +180,13 @@ namespace probots {
     //% subcategory="DHT11 Sensor"
     //% color=#2835C9
     export function ambientHumidity(myPort: any): number {
-        queryData(DHTtype.DHT11, myPort.P0, false, true, false);
+        queryData(DHTtype.DHT11, myPort.P0, false, false, false);
         return readData(dataType.humidity);
     }
 
+    /**
+    * Get Temperature in the ambient.
+    */
     //% blockId="ambientTemperature"
     //% block="get temperature on %myPort=brickPort in $scale=tempType"
     //% scale.defl=tempType.celsius
@@ -187,7 +195,7 @@ namespace probots {
     //% color=#2835C9
     export function ambientTemperature(myPort: any, scale: tempType): number {  
         selectTempType(scale);
-        queryData(DHTtype.DHT11, myPort.P0, false, true, false);
+        queryData(DHTtype.DHT11, myPort.P0, false, false, false);
         return readData(dataType.temperature);
     }
 }
