@@ -55,6 +55,8 @@ namespace probots{
     //% weight=99
     export function microphoneDeltaSound(myPort: any): number {
 
+        led.enable(false);
+
         let getDB = 0;
         let max = 0;
         let min = 1024;
@@ -71,6 +73,8 @@ namespace probots{
         lastMax = max;
         lastMin = min;
 
+        led.enable(true);
+        
         return pins.map(delta, 0 , 1023, 0 , 100);   
     }
 
