@@ -1,6 +1,6 @@
 {
     "name": "Extension 2.0",
-    "version": "0.31.5",
+    "version": "0.31.6",
     "description": "",
     "dependencies": {
         "core": "*",
