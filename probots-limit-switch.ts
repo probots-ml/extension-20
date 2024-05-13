@@ -7,7 +7,9 @@ namespace probots {
     //% color=#FF0099
     export function isLimitSwitchReached(myPort: any): boolean {
 
+        led.enable(false);
         let reading = pins.digitalReadPin(myPort.P0);
+        led.enable(true);
         if (reading == 0) {
             return true;
         }
