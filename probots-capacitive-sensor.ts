@@ -6,8 +6,9 @@ namespace probots {
     //% subcategory="Capacitive Sensor"
     //% color=#663377
     export function capacitiveSensor(myPort: any): boolean {
-
+        led.enable(false);
         let reading = pins.digitalReadPin(myPort.P0);
+        led.enable(true);
         if (reading == 0) {
             return false;
         }
