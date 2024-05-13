@@ -39,7 +39,8 @@
         "probots-ir-flame-sensor.ts",
         "probots-water-level.ts",
         "probots-microbit-brick-v1.ts",
-        "probots.ts"
+        "probots.ts",
+        "probots-tones.ts"
     ],
     "testFiles": [
         "test.ts"

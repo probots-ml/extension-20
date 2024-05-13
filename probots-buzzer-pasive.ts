@@ -10,14 +10,16 @@
 
 namespace probots {
 
-    //% block="play $note by $time ms on %myPort=brickPortPitch"
+    //% block="play %note=TONE by $time ms on %myPort=brickPortPitch"
+    //% time.min=10 time.max=5000 time.defl=1000
+    //% note.defl=TONE.C
     //% weight=100
     //% subcategory="Pasive Buzzer"
     //% color=#A31298
     export function buzzerPasiveOn(note:number, time:number, myPort: any): void {
         //pins.digitalWritePin(myPort.P3, 1);
         pins.analogSetPitchPin(myPort.P1);
-        pins.analogPitch(440, time);
+        pins.analogPitch(note, time);
         return
     }
 
