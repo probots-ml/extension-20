@@ -12,9 +12,14 @@ namespace probots {
     //% color=#A1A5A6
     export function infraredIsOn(myPort: any): boolean {
         led.enable(false);
-        let result = pins.digitalReadPin(myPort.P0) == 1? true : false;
+        let result = pins.digitalReadPin(myPort.P0);
         led.enable(true);
-        return result;
+
+        if(result == 1){
+            return true;
+        } else{
+            return false;
+        }
     }
 }
 
