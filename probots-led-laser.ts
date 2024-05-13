@@ -19,7 +19,7 @@ namespace probots {
     //% intensity.defl=50
     //% intensity.min=0 intensity.max=100
     export function laserOnWithPower(myPort: any, intensity: number): void {
-        let intensityMapped = pins.map(intensity, 0, 100, 0, 1024);
+        let intensityMapped = pins.map(intensity, 0, 100, 0, 1023);
         pins.analogWritePin(getAnalogPin(myPort.P0), intensityMapped);
         pins.digitalWritePin(myPort.P1, 0);
         return
