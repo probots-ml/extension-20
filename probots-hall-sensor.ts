@@ -5,8 +5,9 @@ namespace probots {
     //% subcategory="Hall Sensor"
     //% color=#99AA21
     export function hallSensor(myPort: any): boolean {
-
+        led.enable(false);
         let reading = pins.digitalReadPin(myPort.P0);
+        led.enable(true);
         if (reading == 0) {
             return false;
         }
