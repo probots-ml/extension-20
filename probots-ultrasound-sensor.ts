@@ -16,11 +16,11 @@ namespace probots {
         pins.digitalWritePin(myPort.P1, 0);
         control.waitMicros(10);
         pins.digitalWritePin(myPort.P1, 1);
-
-        led.enable(true);
-        
+     
         // read pulse
         const d = pins.pulseIn(myPort.P0, PulseValue.High, maxCmDistance * 58);
+        
+        led.enable(true);
         return Math.idiv(d, 58);
     }
 }
