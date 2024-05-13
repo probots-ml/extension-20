@@ -4,25 +4,22 @@
 // This sensor use the pin #6, normaly used by SDA 
 // in the rest of ports
 
+// 2024-05-13
+// AnalogPitch only for pins P0, P1, P2
+
+
 namespace probots {
 
-    //% block="turn buzzer on on %myPort=brickPort4Pins"
-    //% block.loc.es="activar buzzer en puerto %myPort=brickPort4Pins"
+    //% block="play $note by $time ms on %myPort=brickPortPitch"
     //% weight=100
     //% subcategory="Pasive Buzzer"
     //% color=#A31298
-    export function buzzerPasiveOn(myPort: any): void {
-        pins.digitalWritePin(myPort.P3, 1);
+    export function buzzerPasiveOn(note:number, time:number, myPort: any): void {
+        //pins.digitalWritePin(myPort.P3, 1);
+        pins.analogSetPitchPin(myPort.P1);
+        pins.analogPitch(440, time);
         return
     }
 
-    //% block="turn buzzer off on %myPort=brickPort4Pins"
-    //% block.loc.es="desactivar buzzer en puerto %myPort=brickPort4Pins"
-    //% weight=99
-    //% subcategory="Pasive Buzzer"
-    //% color=#A31298
-    export function buzzerPasiveOff(myPort: any): void {
-        pins.digitalWritePin(myPort.P3, 0);
-        return
-    }
+  
 }

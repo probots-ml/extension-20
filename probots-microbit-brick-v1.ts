@@ -52,6 +52,15 @@ enum ConnectionPorts2AnalogPins {
     CON6 = 6
 };
 
+/**
+ * Ports with analog pins pitch.
+ */
+enum ConnectionPortsAnalogPitch {
+    CON1 = 1,
+    CON2,
+    CON3
+};
+
 namespace probots{
 
 /**
@@ -107,6 +116,14 @@ let pinOut: any = {
 //% subcategory="Miscellaneous"
 //% weight=96
     export function brickPort2ADC(portToUse: ConnectionPorts2AnalogPins): any {
+        return pinOut[portToUse];
+    }
+
+    //% block="CON pitch %portToUse"
+    //% blockId="brickPortPitch"
+    //% subcategory="Miscellaneous"
+    //% weight=95
+    export function brickPortPitch(portToUse: ConnectionPortsAnalogPitch): any {
         return pinOut[portToUse];
     }
 
