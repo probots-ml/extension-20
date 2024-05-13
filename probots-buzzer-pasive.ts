@@ -11,8 +11,6 @@
 namespace probots {
 
     //% block="play %note=TONE by $time ms on %myPort=brickPortPitch"
-    //% time.min=10 time.max=5000 time.defl=1000
-    //% note.defl=TONE.C
     //% weight=100
     //% subcategory="Pasive Buzzer"
     //% color=#A31298
