@@ -10,9 +10,11 @@ namespace probots {
     //% color=#F93274
     export function ldrValue(myPort: any): number {
 
+        led.enable(false);
         let ldrVal = pins.analogReadPin(getAnalogPin(myPort.P1));
-        
+        led.enable(true)
         return pins.map(ldrVal,0,1023,0,100);
     }
+ 
 }
 

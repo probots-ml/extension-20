@@ -9,12 +9,16 @@ namespace probots {
     //% subcategory="Ultrasonic Sensor"
     //% color=#F025A8
     export function ultrasoundDistance(myPort: any): number {
+        led.enable(false);
+
         // send pulse
         let maxCmDistance = 500;
         pins.digitalWritePin(myPort.P1, 0);
         control.waitMicros(10);
         pins.digitalWritePin(myPort.P1, 1);
 
+        led.enable(true);
+        
         // read pulse
         const d = pins.pulseIn(myPort.P0, PulseValue.High, maxCmDistance * 58);
         return Math.idiv(d, 58);
