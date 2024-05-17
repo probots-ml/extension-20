@@ -14,6 +14,6 @@ namespace probots {
         led.enable(false);
         let actualLevel = pins.analogReadPin(getAnalogPin(myPort.P1));
         led.enable(true);
-        return pins.map(actualLevel, 0, 1023, 0, 100);
+        return pins.map(actualLevel, 1023, 0, 0, 100);
     }
 }
