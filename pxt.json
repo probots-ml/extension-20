@@ -40,7 +40,8 @@
         "probots-water-level.ts",
         "probots-microbit-brick-v1.ts",
         "probots.ts",
-        "probots-tones.ts"
+        "probots-tones.ts",
+        "probots-version.ts"
     ],
     "testFiles": [
         "test.ts"
