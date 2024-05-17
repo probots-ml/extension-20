@@ -18,10 +18,10 @@ namespace probots {
         
         if(irFlame >= 512)
         {
-            return true;
+            return false;
         }
         else{
-            return false;
+            return true;
         }
     }
 }
