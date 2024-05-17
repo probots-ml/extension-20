@@ -1,6 +1,7 @@
-namespace probots {
 
-    let lastHallState: number;
+let lastHallState = 0;
+
+namespace probots {
 
     //% block="magnetique fiel detected on %myPort=brickPort"
     //% weight=100
@@ -15,7 +16,7 @@ namespace probots {
             return true;
         }
         else {
-            return true;
+            return false;
         }
     }
 }
