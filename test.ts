@@ -1,6 +1,6 @@
 
 basic.forever(function () { 
    
-serial.writeValue("h",probots.soilMostureLevel(probots.brickPortADC(ADCConnectionPorts.CON5)))
+serial.writeValue("h",probots.waterLevel(probots.brickPortADC(ADCConnectionPorts.CON5)))
 
 })

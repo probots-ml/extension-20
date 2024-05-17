@@ -1,6 +1,8 @@
 namespace probots {
+
+    let lastHallState: number;
+
     //% block="magnetique fiel detected on %myPort=brickPort"
-    //% block.loc.es="campo magnético detectado en puerto %myPort=brickPort"  
     //% weight=100
     //% subcategory="Hall Sensor"
     //% color=#99AA21
@@ -8,8 +10,9 @@ namespace probots {
         led.enable(false);
         let reading = pins.digitalReadPin(myPort.P0);
         led.enable(true);
-        if (reading == 0) {
-            return false;
+        if (reading != lastHallState) {
+            lastHallState = reading;
+            return true;
         }
         else {
             return true;
