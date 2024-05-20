@@ -72,9 +72,12 @@ namespace probots {
      * initial LCD, set I2C address. Address is 39/63 for PCF8574/PCF8574A
      * @param Addr is i2c address for LCD, eg: 0, 39, 63. 0 is auto find address
      */
-    //% blockId="I2C_LCD1620_SET_ADDRESS" block="LCD initialize with Address %addr"
-    //% weight=100 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% blockId="I2C_LCD1620_SET_ADDRESS" 
+    //% block="LCD initialize with Address %addr"
+    //% addr.defl=39
+    //% weight=100
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function LcdInit(Addr: number) {
         if (Addr == 0) i2cAddr = AutoAddr()
         else i2cAddr = Addr
@@ -99,10 +102,11 @@ namespace probots {
      * @param y is LCD row position, eg: 0
      */
     //% blockId="I2C_LCD1620_SHOW_NUMBER" block="show number %n|at x %x|y %y"
-    //% weight=90 blockGap=8
     //% x.min=0 x.max=15
     //% y.min=0 y.max=1
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=99
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function ShowNumber(n: number, x: number, y: number): void {
         let s = n.toString()
         ShowString(s, x, y)
@@ -118,7 +122,9 @@ namespace probots {
     //% weight=90 blockGap=8
     //% x.min=0 x.max=15
     //% y.min=0 y.max=1
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=98
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function ShowString(s: string, x: number, y: number): void {
         let a: number
 
@@ -138,8 +144,9 @@ namespace probots {
      * turn on LCD
      */
     //% blockId="I2C_LCD1620_ON" block="turn on LCD"
-    //% weight=81 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=97 blockGap=8
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function on(): void {
         cmd(0x0C)
     }
@@ -148,8 +155,9 @@ namespace probots {
      * turn off LCD
      */
     //% blockId="I2C_LCD1620_OFF" block="turn off LCD"
-    //% weight=80 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=96 blockGap=8
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function off(): void {
         cmd(0x08)
     }
@@ -158,8 +166,10 @@ namespace probots {
      * clear all display content
      */
     //% blockId="I2C_LCD1620_CLEAR" block="clear LCD"
-    //% weight=85 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=95 blockGap=8
+    //% weight=100
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function clear(): void {
         cmd(0x01)
     }
@@ -168,8 +178,9 @@ namespace probots {
      * turn on LCD backlight
      */
     //% blockId="I2C_LCD1620_BACKLIGHT_ON" block="turn on backlight"
-    //% weight=71 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=94 blockGap=8
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function BacklightOn(): void {
         BK = 8
         cmd(0)
@@ -179,8 +190,9 @@ namespace probots {
      * turn off LCD backlight
      */
     //% blockId="I2C_LCD1620_BACKLIGHT_OFF" block="turn off backlight"
-    //% weight=70 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=93 blockGap=8
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function BacklightOff(): void {
         BK = 0
         cmd(0)
@@ -190,8 +202,9 @@ namespace probots {
      * shift left
      */
     //% blockId="I2C_LCD1620_SHL" block="Shift Left"
-    //% weight=61 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=92 blockGap=8
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function shl(): void {
         cmd(0x18)
     }
@@ -200,8 +213,9 @@ namespace probots {
      * shift right
      */
     //% blockId="I2C_LCD1620_SHR" block="Shift Right"
-    //% weight=60 blockGap=8
-    //% parts=LCD1602_I2C trackArgs=0
+    //% weight=91 blockGap=8
+    //% subcategory="LCD"
+    //% color=#22EE22
     export function shr(): void {
         cmd(0x1C)
     }
