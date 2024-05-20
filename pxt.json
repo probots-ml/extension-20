@@ -41,7 +41,8 @@
         "probots-microbit-brick-v1.ts",
         "probots.ts",
         "probots-tones.ts",
-        "probots-version.ts"
+        "probots-version.ts",
+        "probots-pir.ts"
     ],
     "testFiles": [
         "test.ts"
