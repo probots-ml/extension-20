@@ -11,20 +11,7 @@ namespace probots {
         return
     }
 
-    //% block="turn Laser on %myPort=brickPort with intensity %intensity"
-    //% block.loc.es="encender Láser en puerto %myPort=brickPort con itensidad %intensity"
-    //% weight=98
-    //% subcategory="Laser"
-    //% color=#FF1122
-    //% intensity.defl=50
-    //% intensity.min=0 intensity.max=100
-    export function laserOnWithPower(myPort: any, intensity: number): void {
-        let intensityMapped = pins.map(intensity, 0, 100, 0, 1023);
-        pins.analogWritePin(getAnalogPin(myPort.P0), intensityMapped);
-        pins.digitalWritePin(myPort.P1, 0);
-        return
-    }
-
+   
     //% block="turn off Laser on %myPort=brickPort"
     //% block.loc.es="apagar Láser en puerto %myPort=brickPort"
     //% weight=97
