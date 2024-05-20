@@ -73,8 +73,8 @@ namespace probots {
      * @param Addr is i2c address for LCD, eg: 0, 39, 63. 0 is auto find address
      */
     //% blockId="I2C_LCD1620_SET_ADDRESS" 
-    //% block="LCD initialize with Address %addr"
-    //% addr.defl=39
+    //% block="LCD initialize with Address %Addr"
+    //% Addr.defl=39
     //% weight=100
     //% subcategory="LCD"
     //% color=#22EE22
