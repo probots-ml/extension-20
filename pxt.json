@@ -42,7 +42,8 @@
         "probots.ts",
         "probots-tones.ts",
         "probots-version.ts",
-        "probots-pir.ts"
+        "probots-pir.ts",
+        "shaoziyan-lcd-i2c.ts"
     ],
     "testFiles": [
         "test.ts"
