@@ -32,7 +32,6 @@ namespace probots{
        */
     //% blockId=temperatureKY013
     //% block="Get Temperature on %myPort=brickPortADC"
-    //% block.loc.es="Obtener temperature en %myPort=brickPortADC"
     //% weight=100
     //% subcategory="Temperature Sensor"
     //% color=#39F2A4
