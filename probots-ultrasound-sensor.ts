@@ -13,13 +13,15 @@ namespace probots {
     export function ultrasoundDistance(myPort: any): number {
         
         led.enable(false);
+        
+        serial.writeNumber(input.runningTime());
 
         if(input.runningTime() > _lastTimeOfReading)
         {       
             // send pulse
             let maxCmDistance = 400;
             pins.digitalWritePin(myPort.P1, 1);
-            control.waitMicros(20);
+            control.waitMicros(10);
             pins.digitalWritePin(myPort.P1, 0);
 
             // read pulse
