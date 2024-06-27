@@ -1,6 +1,5 @@
+basic.forever(function () {
+    if (0 == probots.ultrasoundDistance(probots.brickPort(ConnectionPorts.CON1))) {
 
-basic.forever(function () { 
-   
-serial.writeNumber(probots.ultrasoundDistance(probots.brickPort(ConnectionPorts.CON1)))
-
+    }
 })
