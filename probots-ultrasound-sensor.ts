@@ -19,21 +19,28 @@ namespace probots {
         {       
             // send pulse
             let maxCmDistance = 500;
-            pins.digitalWritePin(myPort.P1, 1);
-            control.waitMicros(10);
-            //pause(50);
+            pins.digitalWritePin(myPort.P0, 0);
             pins.digitalWritePin(myPort.P1, 0);
+            
+            pins.setPull(myPort.P0, PinPullMode.PullNone);
+            pins.setPull(myPort.P1, PinPullMode.PullNone);
 
+            pins.digitalWritePin(myPort.P1, 0);
+            control.waitMicros(2);
+
+            const p1 = pins.pulseIn(myPort.P1, PulseValue.High, maxCmDistance * 58);
+            pins.digitalWritePin(myPort.P1, 1);    
+            control.waitMicros(10);
+
+            pins.digitalWritePin(myPort.P1, 0);
+         
             // read pulse
             const d = pins.pulseIn(myPort.P0, PulseValue.High, maxCmDistance * 58);
 
-            //serial.writeValue("p",d);
-
             _lastDistance =  Math.idiv(d, 58);
-
-            //serial.writeValue("d", _lastDistance);
-            
+         
             _lastTimeOfReading = input.runningTime() + 100;
+           
         }
 
         led.enable(true);
