@@ -1,4 +1,6 @@
 namespace probots {
+      let _lastTimeOfReading:  number;
+      let _lastDistance: number;
       
     /**
      * Get the distance in centimeters from an object. The maximum distance is 5 meters.
@@ -11,16 +13,23 @@ namespace probots {
     export function ultrasoundDistance(myPort: any): number {
         led.enable(false);
 
-        // send pulse
-        let maxCmDistance = 500;
-        pins.digitalWritePin(myPort.P1, 0);
-        control.waitMicros(10);
-        pins.digitalWritePin(myPort.P1, 1);
-     
-        // read pulse
-        const d = pins.pulseIn(myPort.P0, PulseValue.High, maxCmDistance * 58);
-        
-        led.enable(true);
-        return Math.idiv(d, 58);
+        if( input.runningTime() > _lastTimeOfReading)
+        {       
+            // send pulse
+            let maxCmDistance = 400;
+            pins.digitalWritePin(myPort.P1, 1);
+            control.waitMicros(10);
+            pins.digitalWritePin(myPort.P1, 0);
+
+            // read pulse
+            const d = pins.pulseIn(myPort.P0, PulseValue.High, maxCmDistance * 58);
+
+            led.enable(true);
+            _lastDistance =  Math.idiv(d, 58);
+
+            _lastTimeOfReading = input.runningTime() + 100;
+        }
+
+        return _lastDistance;
     }
 }
