@@ -68,6 +68,11 @@ namespace probots{
     serial.writeValue("pin8", pins.digitalReadPin(DigitalPin.P8));
     serial.writeValue("pin0", pins.digitalReadPin(DigitalPin.P0));
     
+    pins.digitalWritePin(DigitalPin.P15, 0);
+    pins.digitalWritePin(DigitalPin.P11, 0);
+    serial.writeValue("pin15", pins.digitalReadPin(DigitalPin.P15));
+    serial.writeValue("pin11", pins.digitalReadPin(DigitalPin.P11));
+
 /**
  * Description of any pinout connection over each port.
  */
