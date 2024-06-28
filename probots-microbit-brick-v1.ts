@@ -190,16 +190,5 @@ let pinOut: any = {
                 break;
         }
     }
-   
-
-    pins.digitalWritePin(DigitalPin.P8, 0);
-    pins.digitalWritePin(DigitalPin.P0, 0);
-    serial.writeValue("pin8", pins.digitalReadPin(DigitalPin.P8));
-    serial.writeValue("pin0", pins.digitalReadPin(DigitalPin.P0));
-
-    pins.digitalWritePin(DigitalPin.P15, 1);
-    pins.digitalWritePin(DigitalPin.P11, 0);
-    serial.writeValue("pin15", pins.digitalReadPin(DigitalPin.P15));
-    serial.writeValue("pin11", pins.digitalReadPin(DigitalPin.P11));
-    
+     
 }
