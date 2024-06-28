@@ -1,5 +1,5 @@
 
-//% weight=5 color=#ff7733 icon="\uf2db"
+//% weight=5 color=#ff3344 icon="\uf2db"
 namespace probots{
     
 }
