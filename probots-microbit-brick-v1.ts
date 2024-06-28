@@ -64,7 +64,8 @@ enum ConnectionPortsAnalogPitch {
 namespace probots{
 
     pins.digitalWritePin(DigitalPin.P8, 0);
-    pins.digitalWritePin(DigitalPin.P20, 1);
+    pins.digitalWritePin(DigitalPin.P0, 0);
+
 
 /**
  * Description of any pinout connection over each port.
