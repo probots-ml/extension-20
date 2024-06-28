@@ -63,6 +63,9 @@ enum ConnectionPortsAnalogPitch {
 
 namespace probots{
 
+    pins.digitalWritePin(DigitalPin.P8, 0);
+    pins.digitalWritePin(DigitalPin.P20, 1);
+
 /**
  * Description of any pinout connection over each port.
  */
@@ -75,7 +78,7 @@ let pinOut: any = {
     6: { P0: DigitalPin.P2,     P1: DigitalPin.P10, P2: DigitalPin.P5,  P3: DigitalPin.P11},
     7: { P0: DigitalPin.P13,    P1: DigitalPin.P14, P2: DigitalPin.P15, P3: DigitalPin.P16},
     8: { P0: DigitalPin.P15,    P1: DigitalPin.P11, P2: DigitalPin.P19, P3: DigitalPin.P20}
-}
+    }
 
 //% block="%portToUse"
 //% blockId="brickPort"
@@ -83,7 +86,7 @@ let pinOut: any = {
 //% weight=100
     export function brickPort(portToUse: ConnectionPorts): any {
     return pinOut[portToUse];
-}
+    }
 
 //% block="I2C %portToUse"
 //% blockId="brickPortI2C"
@@ -91,7 +94,7 @@ let pinOut: any = {
 //% weight=99
     export function brickPortI2C(portToUse: I2CConnectionPorts): any {
         return pinOut[portToUse];
-}
+    }
 
 //% block="4 pins %portToUse"
 //% blockId="brickPort4Pins"
@@ -127,66 +130,66 @@ let pinOut: any = {
         return pinOut[portToUse];
     }
 
-export function getAnalogPin(pin: DigitalPin): any {
-    switch (pin) {
-        case DigitalPin.P0:
-            return AnalogPin.P0;
-            break;
-        case DigitalPin.P1:
-            return AnalogPin.P1;
-            break;
-        case DigitalPin.P2:
-            return AnalogPin.P2;
-            break;
-        case DigitalPin.P3:
-            return AnalogPin.P3;
-            break;
-        case DigitalPin.P4:
-            return AnalogPin.P4;
-            break;
-        case DigitalPin.P5:
-            return AnalogPin.P5;
-            break;
-        case DigitalPin.P6:
-            return AnalogPin.P6;
-            break;
-        case DigitalPin.P7:
-            return AnalogPin.P7;
-            break;
-        case DigitalPin.P8:
-            return AnalogPin.P8;
-            break;
-        case DigitalPin.P9:
-            return AnalogPin.P9;
-            break;
-        case DigitalPin.P10:
-            return AnalogPin.P10;
-            break;
-        case DigitalPin.P11:
-            return AnalogPin.P11;
-            break;
-        case DigitalPin.P12:
-            return AnalogPin.P12;
-            break;
-        case DigitalPin.P13:
-            return AnalogPin.P13;
-            break;
-        case DigitalPin.P14:
-            return AnalogPin.P14;
-            break;
-        case DigitalPin.P15:
-            return AnalogPin.P15;
-            break;
-        case DigitalPin.P16:
-            return AnalogPin.P16;
-            break;
-        case DigitalPin.P19:
-            return AnalogPin.P19;
-            break;
-        case DigitalPin.P20:
-            return AnalogPin.P20;
-            break;
+    export function getAnalogPin(pin: DigitalPin): any {
+        switch (pin) {
+            case DigitalPin.P0:
+                return AnalogPin.P0;
+                break;
+            case DigitalPin.P1:
+                return AnalogPin.P1;
+                break;
+            case DigitalPin.P2:
+                return AnalogPin.P2;
+                break;
+            case DigitalPin.P3:
+                return AnalogPin.P3;
+                break;
+            case DigitalPin.P4:
+                return AnalogPin.P4;
+                break;
+            case DigitalPin.P5:
+                return AnalogPin.P5;
+                break;
+            case DigitalPin.P6:
+                return AnalogPin.P6;
+                break;
+            case DigitalPin.P7:
+                return AnalogPin.P7;
+                break;
+            case DigitalPin.P8:
+                return AnalogPin.P8;
+                break;
+            case DigitalPin.P9:
+                return AnalogPin.P9;
+                break;
+            case DigitalPin.P10:
+                return AnalogPin.P10;
+                break;
+            case DigitalPin.P11:
+                return AnalogPin.P11;
+                break;
+            case DigitalPin.P12:
+                return AnalogPin.P12;
+                break;
+            case DigitalPin.P13:
+                return AnalogPin.P13;
+                break;
+            case DigitalPin.P14:
+                return AnalogPin.P14;
+                break;
+            case DigitalPin.P15:
+                return AnalogPin.P15;
+                break;
+            case DigitalPin.P16:
+                return AnalogPin.P16;
+                break;
+            case DigitalPin.P19:
+                return AnalogPin.P19;
+                break;
+            case DigitalPin.P20:
+                return AnalogPin.P20;
+                break;
+        }
     }
-}
-
+   
 }
