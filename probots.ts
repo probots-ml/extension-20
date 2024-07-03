@@ -1,5 +1,10 @@
 
-//% weight=5 color=#ff3344 icon="\uf2db"
+// weight=5 color=#ff3344 icon="\uf2db"
+
+/**
+ * Probots V2
+ */
+//% color=#ff3344 weight=100 icon="\uf2db" block="Probots V2"
 namespace probots{
     
 }
