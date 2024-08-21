@@ -6,7 +6,6 @@ namespace probots {
        */
     //% blockId=flameSensor
     //% block="It is a presence of flame in %myPort=brickPortADC"
-    //% block.loc.es="Se detecta la presencia de una llama en %myPort=brickPortADC"
     //% weight=100
     //% subcategory="IR Flame Sensor"
     //% color=#28C2B9
@@ -16,12 +15,12 @@ namespace probots {
         let irFlame = pins.analogReadPin(getAnalogPin(myPort.P1));
         led.enable(true);
         
-        if(irFlame >= 512)
+        if(irFlame >= 2)
         {
-            return false;
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
 }
