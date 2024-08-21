@@ -9,7 +9,7 @@ namespace probots {
     //% color=#335566
     export function ledOn(myPort:any): void {
         pins.digitalWritePin(myPort.P0, 1);
-        pins.digitalWritePin(myPort.P1, 0);
+        //pins.digitalWritePin(myPort.P1, 0);
         return
     }
 
@@ -34,7 +34,7 @@ namespace probots {
     //% color=#335566
     export function ledOff(myPort: any): void {
         pins.digitalWritePin(myPort.P0, 0);
-        pins.digitalWritePin(myPort.P1, 0);
+        //pins.digitalWritePin(myPort.P1, 0);
         return
     }
 }
