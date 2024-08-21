@@ -1,6 +1,6 @@
 namespace probots {
 
-    //% block="capacitive sensor touched on %myPort=brickPort"
+    //% block="capacitive sensor is on %myPort=brickPort"
     //% block.loc.es="sensor capacitivo en puerto %myPort=brickPort"  
     //% weight=100
     //% subcategory="Capacitive Sensor"
@@ -10,10 +10,10 @@ namespace probots {
         let reading = pins.digitalReadPin(myPort.P0);
         led.enable(true);
         if (reading == 0) {
-            return false;
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     }
 
