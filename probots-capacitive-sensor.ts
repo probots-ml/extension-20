@@ -17,4 +17,22 @@ namespace probots {
         }
     }
 
+    let capacitiveSensorLastValue = 0;
+    //% block="capacitive sensor has toggled %myPort=brickPort"  
+    //% weight=99
+    //% subcategory="Capacitive Sensor"
+    //% color=#663377
+    export function capacitiveSensorHasChanged(myPort: any): boolean {
+        led.enable(false);
+        let reading = pins.digitalReadPin(myPort.P0);
+        led.enable(true);
+        if (reading != capacitiveSensorLastValue) {
+            capacitiveSensorLastValue = reading;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
