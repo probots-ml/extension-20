@@ -1,10 +1,10 @@
-
-
 basic.forever(function () {
-    if (probots.isButtonPressed(probots.brickPort(ConnectionPorts.CON1))) {
-        serial.writeValue("x", 1)
-    } else {
-        serial.writeValue("x", 0)
-        basic.pause(50);
-    }
+    probots.ledOn(probots.brickPort(ConnectionPorts.CON6))
+    basic.pause(500)
+    probots.ledOff(probots.brickPort(ConnectionPorts.CON6))
+    basic.pause(100)
+    probots.ledOnWithPower(probots.brickPort(ConnectionPorts.CON6),5)
+    basic.pause(500)
+    probots.ledOff(probots.brickPort(ConnectionPorts.CON6))
+    basic.pause(100)
 })

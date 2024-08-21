@@ -8,8 +8,10 @@ namespace probots {
     //% subcategory="LED"
     //% color=#335566
     export function ledOn(myPort:any): void {
+        led.enable(false);
         pins.digitalWritePin(myPort.P0, 1);
         //pins.digitalWritePin(myPort.P1, 0);
+        //led.enable(true);
         return
     }
 
@@ -21,9 +23,10 @@ namespace probots {
     //% intensity.defl=50
     //% intensity.min=0 intensity.max=100
     export function ledOnWithPower(myPort: any, intensity: number): void {
-        let intensityMapped = pins.map(intensity, 0, 100, 0, 1024);
-        pins.analogWritePin(getAnalogPin(myPort.P0), intensityMapped);
-        pins.digitalWritePin(myPort.P1, 0);
+        led.enable(false);
+        let intensityMapped = pins.map(intensity, 0, 100, 0, 1023);
+        pins.analogWritePin(getAnalogPin(myPort.P1), intensityMapped);
+        pins.digitalWritePin(myPort.P0, 1);
         return
     }
 
@@ -33,8 +36,10 @@ namespace probots {
     //% subcategory="LED"
     //% color=#335566
     export function ledOff(myPort: any): void {
+        led.enable(false);
         pins.digitalWritePin(myPort.P0, 0);
-        //pins.digitalWritePin(myPort.P1, 0);
+        //pins.digitalWritePin(myPort.P1, 1);
+        //led.enable(true);
         return
     }
 }
