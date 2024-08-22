@@ -32,8 +32,8 @@ namespace probots {
         
         //2024-05-10: invert green and blue
         let ledRed = myPort.P2;
-        let ledGreen = myPort.P1;
-        let ledBlue = myPort.P0;
+        let ledGreen = myPort.P0;
+        let ledBlue = myPort.P1;
 
         pins.digitalWritePin(ledRed, 0);
         pins.digitalWritePin(ledGreen, 0);
