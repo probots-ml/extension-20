@@ -4,19 +4,20 @@ namespace probots {
      * Detects if it is raining.
      * @param myPort port of connection
     */
-    //% block="it is raining on %myPort=brickPort"  
+    //% block="it is raining on %myPort=brickPortADC"
     //% weight=100
     //% subcategory="Rain Sensor"
     //% color=#A1A5A6
     export function isRaining(myPort: any): boolean {
         led.enable(false);
-        let result = pins.digitalReadPin(myPort.P0);
+        let analogValue = pins.analogReadPin(getAnalogPin(myPort.P1))
         //led.enable(true);
 
-        if (result == 1) {
+        if (analogValue < 512) {
             return true;
         } else {
             return false;
         }
     }
+   
 }
