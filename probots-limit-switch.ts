@@ -9,7 +9,7 @@ namespace probots {
 
         led.enable(false);
         let reading = pins.digitalReadPin(myPort.P0);
-        led.enable(true);
+        //led.enable(true);
         if (reading == 0) {
             return true;
         }

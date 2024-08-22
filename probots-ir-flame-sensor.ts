@@ -13,7 +13,7 @@ namespace probots {
        
         led.enable(false);
         let irFlame = pins.analogReadPin(getAnalogPin(myPort.P1));
-        led.enable(true);
+        //led.enable(true);
         
         if(irFlame >= 2)
         {

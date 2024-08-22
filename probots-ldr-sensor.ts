@@ -12,7 +12,7 @@ namespace probots {
 
         led.enable(false);
         let ldrVal = pins.analogReadPin(getAnalogPin(myPort.P1));
-        led.enable(true)
+        //led.enable(true)
         return pins.map(ldrVal,0,1023,0,100);
     }
  

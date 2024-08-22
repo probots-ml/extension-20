@@ -13,7 +13,7 @@ namespace probots {
     export function infraredIsOn(myPort: any): boolean {
         led.enable(false);
         let result = pins.digitalReadPin(myPort.P0);
-        led.enable(true);
+        //led.enable(true);
 
         if(result == 1){
             return true;

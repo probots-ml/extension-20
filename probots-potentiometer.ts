@@ -12,7 +12,7 @@ namespace probots {
     export function potentiometer(myPort: any): number {
         led.enable(false);
         let analogValue = pins.analogReadPin(getAnalogPin(myPort.P1))
-        led.enable(true);
+        //led.enable(true);
         return pins.map(analogValue, 0, 1023, 100, 0);
     }
 

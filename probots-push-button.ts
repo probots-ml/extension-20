@@ -11,7 +11,7 @@ namespace probots {
         pins.setPull(myPort.P0, PinPullMode.PullUp);
         let reading = pins.digitalReadPin(myPort.P0);
 
-        led.enable(true);
+        //led.enable(true);
         
         if (reading == 0) {
             return true;
