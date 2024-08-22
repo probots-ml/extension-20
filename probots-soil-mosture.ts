@@ -33,7 +33,7 @@ namespace probots {
         led.enable(false);
         let soilMostureValue = pins.map(pins.analogReadPin(getAnalogPin(myPort.P1)), 1023, 0, 0, 100)
         //serial.writeLine("soil=" + soilMostureValue);
-        led.enable(true);
+        //led.enable(true);
         return soilMostureValue;
     }
 }
