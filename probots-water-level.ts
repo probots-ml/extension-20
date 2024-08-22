@@ -6,14 +6,13 @@ namespace probots {
     */
     //% blockId=waterLevel
     //% block="water level on %myPort=brickPortADC"
-    //% block.loc.es="nivel de agua en el puerto %myPort=brickPortADC"
     //% weight=100
     //% subcategory="Water Level"
     //% color=#F93274
     export function waterLevel(myPort: any): number {
         led.enable(false);
         let actualLevel = pins.analogReadPin(getAnalogPin(myPort.P1));
-        led.enable(true);
+        //led.enable(true);
         return pins.map(actualLevel, 1023, 0, 0, 100);
     }
 }

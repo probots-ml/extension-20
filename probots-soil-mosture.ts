@@ -5,14 +5,13 @@ namespace probots {
          * @param myPort port of connection
     */
     //% block="high soil mosture on %myPort=brickPort"
-    //% block.loc.es="humedad del suelo alta en puerto %myPort=brickPort"  
     //% weight=100
     //% subcategory="Soil Mosture"
     //% color=#BC21BC
     export function soilMosture(myPort: any): boolean {
         led.enable(false)
         let result =  pins.digitalReadPin(myPort.P0);
-        led.enable(true);
+        //led.enable(true);
         if(result == 1){
             return false;
         } else {
