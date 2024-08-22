@@ -31,10 +31,12 @@ namespace probots {
     export function rgbPortOn(myPort: any, color: ColorLedRGB): void {
         
         //2024-05-10: invert green and blue
+        //2024-08-22: led.enable(false)
         let ledRed = myPort.P2;
         let ledGreen = myPort.P0;
         let ledBlue = myPort.P1;
 
+        led.enable(false);
         pins.digitalWritePin(ledRed, 0);
         pins.digitalWritePin(ledGreen, 0);
         pins.digitalWritePin(ledBlue, 0);
