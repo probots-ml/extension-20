@@ -5,8 +5,9 @@ namespace probots {
     //% subcategory="Laser"
     //% color=#FF1122
     export function laserOn(myPort: any): void {
-        pins.digitalWritePin(myPort.P0, 1);
-        pins.digitalWritePin(myPort.P1, 0);
+       // pins.digitalWritePin(myPort.P0, 1);
+        led.enable(false);
+        pins.digitalWritePin(myPort.P1, 1);
         return
     }
 
@@ -16,7 +17,8 @@ namespace probots {
     //% subcategory="Laser"
     //% color=#FF1122
     export function laserOff(myPort: any): void {
-        pins.digitalWritePin(myPort.P0, 0);
+        //pins.digitalWritePin(myPort.P0, 0);
+        led.enable(false);
         pins.digitalWritePin(myPort.P1, 0);
         return
     }
