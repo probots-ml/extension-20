@@ -43,7 +43,7 @@ namespace probots {
            
         }
 
-        led.enable(true);
+        //led.enable(true);
 
         return _lastDistance;
     }
