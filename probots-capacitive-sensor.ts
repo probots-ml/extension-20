@@ -8,7 +8,7 @@ namespace probots {
     export function capacitiveSensor(myPort: any): boolean {
         led.enable(false);
         let reading = pins.digitalReadPin(myPort.P0);
-        led.enable(true);
+        //led.enable(true);
         if (reading == 0) {
             return true;
         }
@@ -25,7 +25,7 @@ namespace probots {
     export function capacitiveSensorHasChanged(myPort: any): boolean {
         led.enable(false);
         let reading = pins.digitalReadPin(myPort.P0);
-        led.enable(true);
+        //led.enable(true);
         if (reading != capacitiveSensorLastValue) {
             capacitiveSensorLastValue = reading;
             return true;
