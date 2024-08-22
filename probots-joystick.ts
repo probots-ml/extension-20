@@ -23,6 +23,7 @@ namespace probots {
     //% subcategory="Joystick"
     //% color=#EE3007
     export function joystickAt(myPort: any, action: joystickAction): number {
+        led.enable(false);
         switch (action) {
             case joystickAction.X_AXIS:
                 return pins.map(pins.analogReadPin(myPort.P1), 0, 1023, 0 , 100) ;
