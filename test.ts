@@ -1,7 +1,7 @@
 basic.forever(function () {
-    if (probots.soilMosture(probots.brickPort(ConnectionPorts.CON6))) {
-        probots.ledOn(probots.brickPort(ConnectionPorts.CON7))
+    if (probots.isButtonPressed(probots.brickPort(ConnectionPorts.CON7))) {
+        probots.buzzerActiveOn(probots.brickPort(ConnectionPorts.CON1))
     } else {
-        probots.ledOff(probots.brickPort(ConnectionPorts.CON7))
+        probots.buzzerActiveOff(probots.brickPort(ConnectionPorts.CON1))
     }
 })

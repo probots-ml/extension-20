@@ -1,35 +1,56 @@
 // Añade tu código aquí
 namespace probots {
+    let showStatusCharge = 0
+    let isCharged = 0
+    //showStatusCharge = 0
 
+    input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+        showStatusCharge += 1
+        if (showStatusCharge >= 2) {
+            showStatusCharge = 0
+        }
+    })
+
+   
     //% block="Check Battery Charge"
     //% weight=100
     //% subcategory="Battery"
     //% color=#EE1111
     export function checkBatteryCharge()  {
-
-        led.enable(false);
-        let pinCHRG = DigitalPin.P16
-        pins.setPull(pinCHRG, PinPullMode.PullUp);
-        let reading = pins.digitalReadPin(pinCHRG);
-
-        if (reading == 0) {
+        if (showStatusCharge == 1) {
+            pins.setPull(DigitalPin.P5, PinPullMode.PullUp)
+            if (pins.digitalReadPin(DigitalPin.P5) == 0) {
+                isCharged = 0
+            } else {
+                isCharged = 1
+            }
+            if (0 == isCharged) {
                 basic.showLeds(`
                 . . # . .
                 . # . # .
                 . # . # .
                 . # . # .
                 . # # # .
-                `);
-        }
-        else {
-            basic.showLeds(`
+                `)
+            } else if (1 == isCharged) {
+                basic.showLeds(`
                 . . # . .
                 . # # # .
                 . # # # .
                 . # # # .
                 . # # # .
-                `);
+                `)
+            }
+        } else {
+            basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
         }
+        
     }
 
 }
