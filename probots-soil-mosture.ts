@@ -4,18 +4,18 @@ namespace probots {
          * Detects a if there is enough humidity in the soil.
          * @param myPort port of connection
     */
-    //% block="high soil mosture on %myPort=brickPort"
+    //% block="high soil mosture on %myPort=brickPortADC"
     //% weight=100
     //% subcategory="Soil Mosture"
     //% color=#BC21BC
     export function soilMosture(myPort: any): boolean {
-        led.enable(false)
-        let result =  pins.digitalReadPin(myPort.P0);
-        //led.enable(true);
-        if(result == 1){
-            return false;
-        } else {
+        led.enable(false);
+        let analogValue = pins.analogReadPin(getAnalogPin(myPort.P1))
+
+        if (analogValue < 512) {
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -24,8 +24,7 @@ namespace probots {
          * Get the level of soil humidity. The value goes from 0 (dry) to 100 (wet).
          * @param myPort port of connection
         */
-    //% block="level soil mosture on %myPort=brickPortADC"
-    //% block.loc.es="nivel de humedad del suelo en puerto %myPort=brickPortADC"  
+    //% block="level soil mosture on %myPort=brickPortADC" 
     //% weight=99
     //% subcategory="Soil Mosture"
     //% color=#BC21BC
