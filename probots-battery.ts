@@ -1,17 +1,15 @@
-// Añade tu código aquí
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    showStatusCharge += 1
+    if (showStatusCharge >= 2) {
+        showStatusCharge = 0
+    }
+})
+
+let showStatusCharge = 0
+let isCharged = 0
+
 namespace probots {
-    let showStatusCharge = 0
-    let isCharged = 0
-    //showStatusCharge = 0
 
-    input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-        showStatusCharge += 1
-        if (showStatusCharge >= 2) {
-            showStatusCharge = 0
-        }
-    })
-
-   
     //% block="Check Battery Charge"
     //% weight=100
     //% subcategory="Battery"
