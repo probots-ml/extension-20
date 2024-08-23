@@ -45,7 +45,8 @@
         "probots-tones.ts",
         "probots-version.ts",
         "probots-rain-sensor.ts",
-        "probots-relay.ts"
+        "probots-relay.ts",
+        "probots-battery.ts"
     ],
     "testFiles": [
         "test.ts"
