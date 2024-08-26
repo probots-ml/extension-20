@@ -23,8 +23,7 @@ namespace probots {
     //% subcategory="Passive Buzzer"
     //% color=#A31298
     export function buzzerPasiveOn(note:TONE, time:number, myPort: any): void {
- 
-        pins.analogSetPitchPin(myPort.P1);
+        pins.analogSetPitchPin(getAnalogPin(myPort.P0));
         pins.analogPitch(note, time);
         return
     }
