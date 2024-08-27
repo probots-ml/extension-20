@@ -40,7 +40,7 @@ namespace probots {
             }
         }
 
-        led.enable(false);
+        
 
         //initialize
         let startTime: number = 0
@@ -65,6 +65,7 @@ namespace probots {
         basic.pause(18)
 
         if (pullUp) pins.setPull(dataPin, PinPullMode.PullUp) //pull up data pin if needed
+        led.enable(false);
         pins.digitalReadPin(dataPin) //pull up pin
         control.waitMicros(40)
 
@@ -86,6 +87,7 @@ namespace probots {
                 while (pins.digitalReadPin(dataPin) == 1);
                 while (pins.digitalReadPin(dataPin) == 0);
                 control.waitMicros(28)
+                control.waitMicros(2)
                 //if sensor still pull up data pin after 28 us it means 1, otherwise 0
                 if (pins.digitalReadPin(dataPin) == 1) dataArray[index] = true
             }
