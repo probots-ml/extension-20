@@ -13,7 +13,8 @@ namespace probots{
     //% weight=100
     //% subcategory="Active Buzzer"
     //% color=#A39122
-    export function buzzerActiveOn(myPort: any): void {    
+    export function buzzerActiveOn(myPort: any): void {   
+        led.enable(false) 
         pins.digitalWritePin(myPort.P0, 0);
         return
     }
@@ -23,6 +24,7 @@ namespace probots{
     //% subcategory="Active Buzzer"
     //% color=#A39122
     export function buzzerActiveOff(myPort: any): void {
+        led.enable(false)
         pins.digitalWritePin(myPort.P0, 1);
         return
     } 
