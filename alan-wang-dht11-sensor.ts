@@ -140,7 +140,7 @@ namespace probots {
 
         }
 
-        led.enable(true);
+        //led.enable(true);
 
         //wait 2 sec after query if needed
         if (wait){
