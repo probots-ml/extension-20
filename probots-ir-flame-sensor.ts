@@ -5,7 +5,7 @@ namespace probots {
         * @param myPort port of connection
        */
     //% blockId=flameSensor
-    //% block="It is a presence of flame in %myPort=brickPortADC with $sensitivity"
+    //% block="It is a presence of flame in %myPort=brickPortADC with sensitivity $sensitivity"
     //% weight=100
     //% subcategory="IR Flame Sensor"
     //% color=#28C2B9
