@@ -4,15 +4,16 @@ namespace probots {
          * Detects a if there is enough humidity in the soil.
          * @param myPort port of connection
     */
-    //% block="high soil mosture on %myPort=brickPortADC"
+    //% block="high soil mosture on %myPort=brickPortADC with sensitivity $sensitivity"
     //% weight=100
     //% subcategory="Soil Mosture"
     //% color=#BC21BC
-    export function soilMosture(myPort: any): boolean {
+    //% sensitivity.min=0 sensitivity.max=100  sensitivity.defl=50 
+    export function soilMosture(myPort: any, sensitivity: number): boolean {
         led.enable(false);
         let analogValue = pins.analogReadPin(getAnalogPin(myPort.P1))
-
-        if (analogValue < 512) {
+        let sen = pins.map(sensitivity, 0, 100, 0, 1023)
+        if (analogValue < sen) {
             return true;
         } else {
             return false;
