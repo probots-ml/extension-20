@@ -1,7 +1,7 @@
 namespace probots {
 
     /**
-        * Detect presence of a fire (flame).
+        * Detect presence of a fire (flame) adjusting the sensitivity between 0 and 100.
         * @param myPort port of connection
        */
     //% blockId=flameSensor
