@@ -130,7 +130,7 @@ let pinOut: any = {
         return pinOut[portToUse];
     }
 
-    //% block="%portToUse"
+    //% block="Pitch COM %portToUse"
     //% blockId="brickPortPitch"
     //% subcategory="Miscellaneous"
     //% weight=95
@@ -138,7 +138,7 @@ let pinOut: any = {
         return pinOut[portToUse];
     }
 
-    //% block="%portToUse"
+    //% block="Lower Power %portToUse"
     //% blockId="brickPortLowerPower"
     //% subcategory="Miscellaneous"
     //% weight=94
