@@ -9,7 +9,7 @@ namespace probots {
     //% weight=100
     //% subcategory="IR Flame Sensor"
     //% color=#28C2B9
-    //%sensitivity.min=0 sensitivity.max=100  sensitivity.def=90 
+    //%sensitivity.min=0 sensitivity.max=100  sensitivity.defl=90 
     export function flameSensor(myPort: any, sensitivity: number): boolean {     
        
         led.enable(false);
