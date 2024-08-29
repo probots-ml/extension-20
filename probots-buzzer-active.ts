@@ -7,9 +7,12 @@
 // 2024-05-20
 // The pins connection was changed to P0
 
+// 2024-08-29
+// Problems with PNP transistor: always sound. Solution, power with 3.3 Volts
+
 namespace probots{
 
-    //% block="turn buzzer on on %myPort=brickPort"
+    //% block="turn buzzer on on %myPort=brickPortLowerPower"
     //% weight=100
     //% subcategory="Active Buzzer"
     //% color=#A39122
@@ -19,7 +22,7 @@ namespace probots{
         return
     }
 
-    //% block="turn buzzer off on %myPort=brickPort"
+    //% block="turn buzzer off on %myPort=brickPortLowerPower"
     //% weight=99
     //% subcategory="Active Buzzer"
     //% color=#A39122
