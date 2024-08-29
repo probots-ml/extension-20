@@ -61,9 +61,18 @@ enum ConnectionPortsAnalogPitch {
     CON3
 };
 
-namespace probots{
+/**
+ * Ports with Lower Power connections for the ebrick.
+ * For example, Active Buzzer.
+ */
+enum ConnectionPortsLowerPower {
+    CON5 = 5,
+    CON7 = 7
+};
 
-   
+
+
+namespace probots{
 
 /**
  * Description of any pinout connection over each port.
@@ -126,6 +135,14 @@ let pinOut: any = {
     //% subcategory="Miscellaneous"
     //% weight=95
     export function brickPortPitch(portToUse: ConnectionPortsAnalogPitch): any {
+        return pinOut[portToUse];
+    }
+
+    //% block="%portToUse"
+    //% blockId="brickPortLowerPower"
+    //% subcategory="Miscellaneous"
+    //% weight=94
+    export function brickPortLowerPower(portToUse: ConnectionPortsLowerPower): any {
         return pinOut[portToUse];
     }
 
