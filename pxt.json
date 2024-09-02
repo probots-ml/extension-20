@@ -15,6 +15,7 @@
         "probots-buzzer-pasive.ts",
         "oled-12864-i2c.ts",
         "main.py",
+        "probots-battery.ts",
         "probots-led.ts",
         "probots-led-rgb-ports.ts",
         "probots-led-laser.ts",
@@ -45,8 +46,7 @@
         "probots-tones.ts",
         "probots-version.ts",
         "probots-rain-sensor.ts",
-        "probots-relay.ts",
-        "probots-battery.ts"
+        "probots-relay.ts"
     ],
     "testFiles": [
         "test.ts"
