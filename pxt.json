@@ -46,7 +46,11 @@
         "probots-tones.ts",
         "probots-version.ts",
         "probots-rain-sensor.ts",
-        "probots-relay.ts"
+        "probots-relay.ts",
+        "_locales/Probots-Extension-2.0-strings.json",
+        "_locales/Probots-Extension-2.0-jsdoc-strings.json",
+        "_locales/es/Probots-Extension-2.0-strings.json",
+        "_locales/es/Probots-Extension-2.0-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
