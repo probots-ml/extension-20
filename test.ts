@@ -1,4 +1,7 @@
 basic.forever(function () {
-    basic.pause(100)
-    serial.writeValue("x", probots.potentiometer(probots.brickPortADC(ADCConnectionPorts.CON2)))
+    if (probots.potentiometer(probots.brickPortADC(ADCConnectionPorts.CON1)) > 50) {
+        probots.ledOn(probots.brickPort(ConnectionPorts.CON3))
+    } else {
+        probots.ledOff(probots.brickPort(ConnectionPorts.CON3))
+    }
 })

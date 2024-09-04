@@ -2,11 +2,8 @@
 
 let myBattery: probots.BatteryChecker;
 
-//checkBatteryCharge
-
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {  
-    myBattery.showStatusCharge = !myBattery.showStatusCharge;
-    //serial.writeString("show=" + myBattery.showStatusCharge.toString())
+    myBattery.showStatusCharge = !myBattery.showStatusCharge;  
 })
 
 namespace probots {
@@ -15,13 +12,25 @@ namespace probots {
         statusWasShowed: boolean;
         isCharged: number;
 
+        private soundCharging(): void{
+            //music.setVolume(127)
+            music.ringTone(262)
+            music.rest(music.beat(BeatFraction.Sixteenth))
+            music.ringTone(786)          
+        }
+
+        private soundCharged(): void{
+            //music.setVolume(127)
+            music.ringTone(988) 
+        }
+
         checkBattery(): void {
                    
-            while (this.showStatusCharge) {
+            if (this.showStatusCharge) 
+            {
+                music.setBuiltInSpeakerEnabled(true)
 
-                //serial.writeString("checkBattery true")
-
-                //pins.setPull(DigitalPin.P5, PinPullMode.PullUp)
+                pins.setPull(DigitalPin.P5, PinPullMode.PullUp)
                 this.statusWasShowed = false
 
                 if (pins.digitalReadPin(DigitalPin.P5) == 0) {
@@ -32,40 +41,22 @@ namespace probots {
                 }
 
                 if (0 == this.isCharged) {
-                    led.enable(true)
-                    basic.showLeds(`
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                # . . . .
-                `)
+                   
+                    this.soundCharging()
+                 
                 }
                 else if (1 == this.isCharged) {
-                    led.enable(true)
-                    basic.showLeds(`
-                # . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                `)
+                                 
+                    this.soundCharging()                  
                 }
-                //serial.writeString("batery " + this.isCharged.toString())
+                
             }
-            //else {
+            else 
             {
+                music.setBuiltInSpeakerEnabled(false)
                 if (!statusWasShowed) {
                     statusWasShowed = true
-                    led.enable(true)
-
-                    basic.showLeds(`
-				. . . . .
-				. . . . .
-				. . . . .
-				. . . . .
-				. . . . .
-				`)
+                    music.stopAllSounds()                 
                 }
             }
         }
