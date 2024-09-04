@@ -1,3 +1,4 @@
+/*
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     statusWasShowed = false
     showStatusCharge += 1
@@ -5,6 +6,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         showStatusCharge = 0
     }
 })
+*/
 
 let showStatusCharge = 0
 let isCharged = 0

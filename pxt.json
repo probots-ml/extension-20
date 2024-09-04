@@ -50,7 +50,8 @@
         "_locales/Probots-Extension-2.0-strings.json",
         "_locales/Probots-Extension-2.0-jsdoc-strings.json",
         "_locales/es/Probots-Extension-2.0-strings.json",
-        "_locales/es/Probots-Extension-2.0-jsdoc-strings.json"
+        "_locales/es/Probots-Extension-2.0-jsdoc-strings.json",
+        "probots-battery-manager.ts"
     ],
     "testFiles": [
         "test.ts"
