@@ -47,7 +47,7 @@ namespace probots {
                 }
                 else if (1 == this.isCharged) {
                                  
-                    this.soundCharging()                  
+                    this.soundCharged()                  
                 }
                 
             }
