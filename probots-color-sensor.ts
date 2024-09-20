@@ -143,7 +143,9 @@ namespace probots{
     let atimeIntegrationValue = 0;
     let gainSensorValue = 0
 
-
+    //% blockId=tcs34725_init block="Init Color Sensor I2C"
+    //% subcategory="RGB Sensor"
+    //% weight=99 color=#338012
     export function initSensor(): void {
         //REGISTER FORMAT:   CMD | TRANSACTION | ADDRESS
         //REGISTER READ:     TCS34725_REGISTER_COMMAND (0x80) | TCS34725_REGISTER_ID (0x12)
@@ -237,7 +239,10 @@ namespace probots{
         gainSensorValue = gain;
     }
 
-    
+    //% blockId="start_colorSensor"
+    //% weight=99 color=#338012
+    //% blockId=tcs34725_start block="Start sensor with integration time %atime=TCS34725_ATIME and %gain=TCS34725_AGAIN"
+    //% subcategory="RGB Sensor"
     export function start(atime: TCS34725_ATIME, gain: TCS34725_AGAIN) {
 
         while (!isConnected) {
@@ -248,17 +253,7 @@ namespace probots{
         setGAINsensor(gain);
         turnSensorOn(atime);
     }
-
-
-    //% blockId=tcs34725_start_init block="Init Color Sensor I2C"
-    //% subcategory="RGB Sensor"
-    //% weight=100 color=#338012
-    export function startAndInit()
-    {
-        probots.start(TCS34725_ATIME.TIME_2_4_MS, TCS34725_AGAIN.GAIN_1X);
-        //probots.initSensor()
-    }
-
+  
     export type RGBC = {
         red: number,
         green: number,
