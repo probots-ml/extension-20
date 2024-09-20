@@ -260,13 +260,13 @@ namespace probots{
     //% subcategory="RGB Sensor"
     //% weight=100 color=#338012
     export function startAndInitRGBSensor(){
-        probots.start(TCS34725_ATIME.TIME_2_4_MS, TCS34725_AGAIN.GAIN_1X)
         //probots.initSensor()
+        probots.start(TCS34725_ATIME.TIME_2_4_MS, TCS34725_AGAIN.GAIN_1X) 
     }
 
     export function getSensorRGB(): RGBC {
         //Always check that sensor is/was turned on
-        while (!isConnected) {
+        if (!isConnected) {
             initSensor();
         }
 
