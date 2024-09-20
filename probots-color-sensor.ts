@@ -250,13 +250,13 @@ namespace probots{
     }
 
 
-    //% blockId=tcs34725_init block="Init Color Sensor I2C"
+    //% blockId=tcs34725_start_init block="Init Color Sensor I2C"
     //% subcategory="RGB Sensor"
     //% weight=100 color=#338012
-    export function startAndInit():void
+    export function startAndInit()
     {
         probots.start(TCS34725_ATIME.TIME_2_4_MS, TCS34725_AGAIN.GAIN_1X);
-        probots.initSensor()
+        //probots.initSensor()
     }
 
     export type RGBC = {
