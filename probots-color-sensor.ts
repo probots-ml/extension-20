@@ -240,7 +240,7 @@ namespace probots{
  
     export function start(atime: TCS34725_ATIME, gain: TCS34725_AGAIN) {
 
-        while (!isConnected) {
+        if (!isConnected) {
             initSensor();
         }
 
@@ -319,21 +319,26 @@ namespace probots{
     //% subcategory="RGB Sensor"
     //% weight=98 color=#338012
     export function getSensorData(colorId: RGB): number {
-        let data = getSensorRGB();
-        let color = 0;
+        if (isConnected)
+        {
+            let data = getSensorRGB();
+            let color = 0;
 
-        switch (colorId) {
-            case RGB.RED: color = data.red;
-                break;
-            case RGB.GREEN: color = data.green;
-                break;
-            case RGB.BLUE: color = data.blue;
-                break;
-            case RGB.CLEAR: color = data.clear;
-                break;
+            switch (colorId) {
+                case RGB.RED: color = data.red;
+                    break;
+                case RGB.GREEN: color = data.green;
+                    break;
+                case RGB.BLUE: color = data.blue;
+                    break;
+                case RGB.CLEAR: color = data.clear;
+                    break;
+            }
+
+            return color;
         }
-
-        return color;
+        else{
+            return 0;
+        }
     }
-
 }
