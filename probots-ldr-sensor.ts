@@ -4,7 +4,7 @@ namespace probots {
      * @param myPort port of connection
     */
     //% blockId=ldrValue
-    //% block="LDR value on %myPort=brickPortADC"
+    //% block="LDR value on %myPort=brickPortADCLowerPower"
     //% weight=100
     //% subcategory="LDR Sensor"
     //% color=#F93274
