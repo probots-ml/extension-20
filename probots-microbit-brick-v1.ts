@@ -70,7 +70,13 @@ enum ConnectionPortsLowerPower {
     CON7 = 7
 };
 
-
+/**
+ * Ports ADC 3.3 volts.
+ * For example, Potentiometer, LDR.
+ */
+enum ConnectionPortsADCLowerPower {
+    CON5 = 5
+};
 
 namespace probots{
 
@@ -145,6 +151,15 @@ let pinOut: any = {
     export function brickPortLowerPower(portToUse: ConnectionPortsLowerPower): any {
         return pinOut[portToUse];
     }
+
+    //% block="Lower Power ADCI %portToUse"
+    //% blockId="brickPortADCLowerPower"
+    //% subcategory="Miscellaneous"
+    //% weight=94
+    export function brickPortADCLowerPower(portToUse: ConnectionPortsADCLowerPower): any {
+        return pinOut[portToUse];
+    }
+
 
     export function getAnalogPin(pin: DigitalPin): any {
         switch (pin) {

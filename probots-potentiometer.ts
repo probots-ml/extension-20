@@ -5,7 +5,7 @@ namespace probots {
      * @param myPort port of connection
     */
     //%blockId=potentiometer
-    //% block="value of potentiometer in %myPort=brickPortADC"
+    //% block="value of potentiometer in %myPort=brickPortADCLowerPower"
     //% weight=100
     //% subcategory="Potentiometer"
     //% color=#663377
